@@ -4,19 +4,27 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Guia do Hóspede Golden Sea</title>
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<meta name="description" content="Guia do hóspede da Cobertura Golden Sea, na Enseada, Guarujá. Villa da Serra.">
+<meta property="og:title" content="Guia do Hóspede · Cobertura Golden Sea">
+<meta property="og:description" content="Tudo sobre a sua estadia: entrada, wifi, piscina, praias e dicas da Enseada.">
+<meta property="og:image" content="capa.jpg">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* Coluna única no formato de celular, mar e areia do Guarujá, serifa só nos títulos */
 :root{
-  --areia:#F4F0E8;
-  --papel:#FFFFFF;
+  --areia:#D5D5D1;
+  --papel:#F1F1EE;
+  --branco:#FFFFFF;
   --tinta:#16272F;
   --suave:#687C86;
   --mar:#13596E;
   --mar-claro:#E2EDF0;
-  --linha:#E7E0D4;
+  --linha:#E0DFD9;
   --preencher-fundo:#FBEEDA;
   --preencher-tinta:#8F5A12;
   --alerta-fundo:#FAE8E8;
@@ -39,7 +47,7 @@ body{
 @media (min-width:720px){
   body{
     background:
-      radial-gradient(900px 500px at 50% -10%, #D8E6EA 0%, rgba(216,230,234,0) 70%),
+      radial-gradient(900px 520px at 50% -10%, #C6D6DA 0%, rgba(198,214,218,0) 70%),
       var(--areia);
     padding:28px 16px;
   }
@@ -144,7 +152,7 @@ body{
   padding:13px 16px 13px 42px;
   border:1px solid var(--linha);
   border-radius:999px;
-  background:var(--papel);
+  background:var(--branco);
 }
 .busca input:focus{outline:2px solid var(--mar);outline-offset:1px;border-color:transparent}
 .grade{
@@ -178,6 +186,7 @@ body{
 
 .cartao-nota{
   margin-top:28px;
+  background:var(--branco);
   border:1px solid var(--linha);
   border-radius:var(--raio);
   padding:16px;
@@ -202,7 +211,7 @@ body{
 }
 .emerg .linha-tels{display:flex;gap:7px;flex-wrap:wrap}
 .emerg a{
-  background:var(--papel);
+  background:var(--branco);
   border-radius:999px;
   padding:6px 12px;
   text-decoration:none;
@@ -215,7 +224,7 @@ body{
 /* ---------- barra das seções ---------- */
 .barra{
   position:sticky;top:0;z-index:5;
-  background:rgba(255,255,255,.94);
+  background:rgba(241,241,238,.93);
   backdrop-filter:blur(8px);
   margin:0 -22px;
   padding:13px 22px;
@@ -288,20 +297,20 @@ body{
 }
 
 /* dados: wifi, senha da porta */
-.dados{border:1px solid var(--linha);border-radius:var(--raio);padding:4px 16px;margin-bottom:15px}
+.dados{background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio);padding:4px 16px;margin-bottom:15px}
 .dados .par{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0}
 .dados .par + .par{border-top:1px solid var(--linha)}
 .dados .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--suave);flex:0 0 auto}
 .dados .v{font-weight:600;font-size:16px;word-break:break-all;text-align:right;display:flex;align-items:center;gap:9px;justify-content:flex-end;flex-wrap:wrap}
 .copiar{
-  border:1px solid var(--linha);background:var(--papel);color:var(--mar);
+  border:1px solid var(--linha);background:var(--branco);color:var(--mar);
   border-radius:999px;padding:4px 11px;font-family:var(--texto);
   font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;
 }
 .copiar:hover{background:var(--mar-claro)}
 
 /* lugares */
-.lugar{border:1px solid var(--linha);border-radius:var(--raio);padding:15px 16px;margin-bottom:11px}
+.lugar{background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio);padding:15px 16px;margin-bottom:11px}
 .lugar h4{margin:0 0 4px;font-size:16px;font-weight:600}
 .lugar p{margin:0 0 10px;font-size:14px;color:var(--suave);line-height:1.5}
 .lugar a{
@@ -324,6 +333,7 @@ body{
 .navpe{display:flex;gap:9px;margin-top:30px}
 .navpe a{
   flex:1;text-align:center;text-decoration:none;color:var(--mar);
+  background:var(--branco);
   border:1px solid var(--linha);border-radius:999px;padding:11px 8px;
   font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;
 }
@@ -339,7 +349,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 /* ---------- capa com foto ---------- */
 #capa{padding:0}
 .hero{position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;background:#0E3A48}
-.hero img{width:100%;height:100%;object-fit:cover;display:block}
+.hero img{width:100%;height:100%;object-fit:cover;object-position:center 68%;display:block}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,28,36,0) 34%,rgba(8,28,36,.45) 62%,rgba(8,28,36,.86) 100%)}
 .hero-texto{position:absolute;left:0;right:0;bottom:30px;z-index:2;text-align:center;padding:0 22px}
 .hero-texto .capa-titulo{color:#fff;margin:0}
@@ -387,6 +397,9 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 <symbol id="i-pino" viewBox="0 0 24 24"><path d="M12 21.2s7-5.6 7-11.2a7 7 0 1 0-14 0c0 5.6 7 11.2 7 11.2z"/><circle cx="12" cy="10" r="2.6"/></symbol>
 <symbol id="i-fone" viewBox="0 0 24 24"><path d="M6 3.5h3.7l1.8 4.6-2.4 1.5a12.4 12.4 0 0 0 5.3 5.3l1.5-2.4 4.6 1.8V18a2.5 2.5 0 0 1-2.7 2.5C10.4 19.6 4.4 13.6 3.5 6.2A2.5 2.5 0 0 1 6 3.5z"/></symbol>
 <symbol id="i-estrela" viewBox="0 0 24 24"><path d="M12 3.4l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8-5.4 2.8 1-6L3.3 9.8l6-.9z"/></symbol>
+<symbol id="i-faq" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.8"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.8-.9 1.4v.6"/><path d="M12 17.2h.01"/></symbol>
+<symbol id="i-crianca" viewBox="0 0 24 24"><circle cx="12" cy="6" r="2.6"/><path d="M12 8.6v6.2M8 11.4h8M9.6 20.6L12 14.8l2.4 5.8"/></symbol>
+<symbol id="i-chuva" viewBox="0 0 24 24"><path d="M7.4 15.4a3.9 3.9 0 0 1 .3-7.8 5.2 5.2 0 0 1 10 1.2 3.3 3.3 0 0 1-.6 6.6"/><path d="M9.2 18.2l-.9 2.4M13 18.2l-.9 2.4M16.8 18.2l-.9 2.4"/></symbol>
 <symbol id="i-lupa" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M15.8 15.8L21 21"/></symbol>
 <symbol id="i-volta" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
 <symbol id="i-mapa" viewBox="0 0 24 24"><path d="M12 21s7-5.6 7-11.2a7 7 0 1 0-14 0C5 15.4 12 21 12 21z"/><circle cx="12" cy="10" r="2.5"/></symbol>
@@ -397,7 +410,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
   <!-- CAPA -->
   <section class="pag ativa" id="capa">
     <div class="hero">
-      <img src="capa.jpg" alt="Piscina da cobertura iluminada ao anoitecer">
+      <img src="capa.jpg" alt="Piscina da cobertura com vista para a praia da Enseada">
       <div class="hero-texto">
         <h1 class="capa-titulo">Bem vindo</h1>
         <div class="capa-sub">guia do hóspede</div>
@@ -461,6 +474,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
    pendência. Troque pelo valor real e a etiqueta some sozinha.
    ===================================================================== */
 const FOTOS = [
+  {a:"23", l:"Piscina e vista da Enseada"},
   {a:"01", l:"Piscina da cobertura"},
   {a:"02", l:"Piscina e espreguiçadeira"},
   {a:"03", l:"Área externa ao anoitecer"},
@@ -595,6 +609,35 @@ const GUIA = {
       ]
     },
     {
+      id:"faq", titulo:"Perguntas", icone:"i-faq",
+      blocos:[
+        {t:"h2", v:"Perguntas frequentes"},
+        {t:"h3", v:"A que horas posso chegar?"},
+        {t:"p", v:"A entrada é a partir das 15h e a saída é até as 15h. Cada diária são 24 horas completas."},
+        {t:"h3", v:"O que preciso levar?"},
+        {t:"ul", v:[
+          "Produtos de higiene pessoal.",
+          "Detergente e material de limpeza básica.",
+          "Toalha de praia, porque só fornecemos as de banho.",
+          "Carvão, se for usar a churrasqueira."
+        ]},
+        {t:"h3", v:"Tem troca de roupa de cama e toalha?"},
+        {t:"p", v:"Não durante a estadia. É um jogo de cama e uma toalha por hóspede contratado. A troca só acontece com uma limpeza extra, por R$ 250,00 por hospedagem, agendada com antecedência."},
+        {t:"h3", v:"Preciso limpar antes de sair?"},
+        {t:"p", v:"Não. A limpeza é por nossa conta. Só pedimos que o lixo não fique acumulado e que a louça esteja lavada."},
+        {t:"h3", v:"Posso levar visitas?"},
+        {t:"p", v:"Sim, avisando antes. A visita também precisa ser autorizada na portaria, e todo mundo conta no limite de 10 pessoas da cobertura."},
+        {t:"h3", v:"Posso levar meu pet?"},
+        {t:"p", v:"Sim, um pet de pequeno porte."},
+        {t:"h3", v:"Quantos carros cabem?"},
+        {t:"p", v:"Três, que é o limite de vagas da unidade. Informe modelo, cor e placa de cada um antes de chegar."},
+        {t:"h3", v:"Qual a voltagem das tomadas?"},
+        {t:"p", v:"Tudo na casa é 110V."},
+        {t:"h3", v:"Quem cuida da piscina?"},
+        {t:"p", v:"Temos piscineiro próprio, que mantém a piscina em uso durante toda a estadia. Só não mexa nos registros."}
+      ]
+    },
+    {
       id:"contatos", titulo:"Contatos", icone:"i-fone",
       blocos:[
         {t:"h2", v:"Contatos"},
@@ -696,6 +739,28 @@ const GUIA = {
       ]
     },
     {
+      id:"criancas", titulo:"Com crianças", icone:"i-crianca",
+      blocos:[
+        {t:"h2", v:"Com crianças"},
+        {t:"foto", v:"23", alt:"Piscina da cobertura com vista para a praia"},
+        {t:"h3", v:"Na cobertura"},
+        {t:"ul", v:[
+          "A piscina é privativa e <strong>não tem salva vidas</strong>. Criança na água sempre com um adulto por perto.",
+          "As portas de vidro são sensíveis. Vale combinar antes de não correr perto delas.",
+          "Crianças contam no limite de 10 pessoas e também precisam constar na lista da portaria.",
+          "A mesa grande da área externa comporta a família toda para uma refeição."
+        ]},
+        {t:"h3", v:"Na praia"},
+        {t:"ul", v:[
+          "A Enseada fica em frente ao prédio, com o serviço de praia do condomínio.",
+          "Para mar mais calmo, vale o deslocamento até a Praia das Astúrias.",
+          "Evite o Tombo com crianças pequenas: o mar é aberto e as ondas são fortes."
+        ]},
+        {t:"h3", v:"Passeios"},
+        {t:"p", v:"O Acqua Mundo, na própria Enseada, é a saída certa em dia de chuva ou de sol forte demais."}
+      ]
+    },
+    {
       id:"fotos", titulo:"Fotos", icone:"i-camera",
       blocos:[
         {t:"h2", v:"Fotos"},
@@ -756,6 +821,27 @@ const GUIA = {
           {n:"Centro histórico de Santos", d:"A uma travessia de balsa. Jardins da orla, bondinho e o museu do café."}
         ]},
         {t:"nota", v:"Confira horário e funcionamento antes de ir."}
+      ]
+    },
+    {
+      id:"chuva", titulo:"Dia de chuva", icone:"i-chuva",
+      blocos:[
+        {t:"h2", v:"Dia de chuva"},
+        {t:"p", v:"No litoral chove, e às vezes chove o dia inteiro. Algumas saídas."},
+        {t:"h3", v:"Fora de casa"},
+        {t:"lugares", v:[
+          {n:"Acqua Mundo", d:"Aquário coberto, na própria Enseada. O programa mais prático quando o tempo fecha."},
+          {n:"Outlet Premium Guarujá", d:"Compras cobertas, na rodovia. Rende uma tarde inteira."},
+          {n:"Aquário Municipal de Santos", d:"Do outro lado da balsa, junto à orla de Santos."},
+          {n:"Museu do Café", d:"No centro histórico de Santos, no antigo prédio da Bolsa do Café."}
+        ]},
+        {t:"h3", v:"Dentro da cobertura"},
+        {t:"ul", v:[
+          "A TV da sala tem Netflix e Globoplay já configurados.",
+          "O som da área externa toca pelo Spotify, e a varanda é coberta em boa parte.",
+          "Os aplicativos de entrega costumam atender bem a Enseada."
+        ]},
+        {t:"atencao", v:"<strong>Chuva aqui costuma vir com vento</strong>Feche os guarda sóis assim que o tempo virar. É quando o vidro quebra."}
       ]
     },
     {
