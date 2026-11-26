@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guia do Hóspede Villa da Serra I</title>
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<meta name="description" content="Guia do hóspede da Villa da Serra I, casa moderna em Paraty.">
+<meta property="og:title" content="Guia do Hóspede · Villa da Serra I">
+<meta property="og:description" content="Tudo sobre a sua estadia: entrada, wifi, churrasqueira, piscina e dicas de Paraty.">
+<meta property="og:image" content="capa.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Coluna única no formato de celular, mar e areia do Guarujá, serifa só nos títulos */
+:root{
+  --areia:#D5D5D1;
+  --papel:#F1F1EE;
+  --branco:#FFFFFF;
+  --tinta:#16272F;
+  --suave:#687C86;
+  --mar:#13596E;
+  --mar-claro:#E2EDF0;
+  --linha:#E0DFD9;
+  --preencher-fundo:#FBEEDA;
+  --preencher-tinta:#8F5A12;
+  --alerta-fundo:#FAE8E8;
+  --alerta-tinta:#95332F;
+  --display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --texto:"Karla","Helvetica Neue",Arial,sans-serif;
+  --raio:14px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--areia);
+  color:var(--tinta);
+  font-family:var(--texto);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+@media (min-width:720px){
+  body{
+    background:
+      radial-gradient(900px 520px at 50% -10%, #C6D6DA 0%, rgba(198,214,218,0) 70%),
+      var(--areia);
+    padding:28px 16px;
+  }
+}
+.app{
+  max-width:468px;
+  margin:0 auto;
+  background:var(--papel);
+  min-height:100vh;
+}
+@media (min-width:720px){
+  .app{
+    min-height:0;
+    border-radius:24px;
+    box-shadow:0 24px 60px rgba(22,39,47,.13), 0 2px 6px rgba(22,39,47,.06);
+    overflow:hidden;
+  }
+}
+.pag{display:none;padding:0 22px 44px}
+.pag.ativa{display:block}
+
+/* ---------- capa ---------- */
+#capa{padding:26px 22px 40px;text-align:center}
+.arco{
+  width:100%;
+  aspect-ratio:3/3.4;
+  border-radius:1000px 1000px 18px 18px;
+  overflow:hidden;
+  background:var(--mar-claro);
+}
+.arco svg{display:block;width:100%;height:100%}
+.capa-titulo{
+  font-family:var(--display);
+  font-weight:500;
+  font-size:44px;
+  line-height:1;
+  letter-spacing:.07em;
+  margin:26px 0 0;
+  text-transform:uppercase;
+  text-wrap:balance;
+}
+.capa-sub{
+  font-family:var(--display);
+  font-style:italic;
+  font-size:25px;
+  color:var(--mar);
+  margin-top:2px;
+}
+.capa-nome{
+  margin-top:20px;
+  font-size:12.5px;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+  font-weight:600;
+}
+.capa-local{
+  font-size:12.5px;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:var(--suave);
+  margin-top:5px;
+}
+.botao{
+  display:inline-block;
+  margin-top:26px;
+  background:var(--mar);
+  color:#fff;
+  text-decoration:none;
+  padding:14px 34px;
+  border-radius:999px;
+  font-size:12.5px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  font-weight:600;
+}
+.botao:hover{background:#0F4A5C}
+
+/* ---------- sumário ---------- */
+.sumario-topo{text-align:center;padding:34px 0 20px}
+.sumario-topo h1{
+  font-family:var(--display);
+  font-weight:500;
+  font-size:34px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0;
+}
+.sumario-topo p{
+  margin:4px 0 0;
+  font-size:11.5px;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+  color:var(--suave);
+}
+.busca{position:relative;margin-bottom:26px}
+.busca svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);width:17px;height:17px;stroke:var(--suave);fill:none;stroke-width:1.7}
+.busca input{
+  width:100%;
+  font-family:var(--texto);
+  font-size:15px;
+  color:var(--tinta);
+  padding:13px 16px 13px 42px;
+  border:1px solid var(--linha);
+  border-radius:999px;
+  background:var(--branco);
+}
+.busca input:focus{outline:2px solid var(--mar);outline-offset:1px;border-color:transparent}
+.grade{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px 10px;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.grade a{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:9px;
+  text-decoration:none;
+  color:var(--tinta);
+  font-size:12.5px;
+  text-align:center;
+  line-height:1.25;
+}
+.bolha{
+  width:52px;height:52px;
+  border-radius:50%;
+  background:var(--mar-claro);
+  display:grid;place-items:center;
+}
+.grade a:hover .bolha{background:#CFE1E6}
+.bolha svg{width:23px;height:23px;stroke:var(--mar);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.vazio{text-align:center;color:var(--suave);font-size:14px;padding:26px 0;display:none}
+
+.cartao-nota{
+  margin-top:28px;
+  background:var(--branco);
+  border:1px solid var(--linha);
+  border-radius:var(--raio);
+  padding:16px;
+  text-align:center;
+}
+.cartao-nota strong{display:block;font-size:14.5px;margin-bottom:5px}
+.cartao-nota p{margin:0;font-size:13px;color:var(--suave);line-height:1.5}
+
+.emerg{
+  margin-top:18px;
+  background:var(--alerta-fundo);
+  border-radius:var(--raio);
+  padding:13px 14px 15px;
+}
+.emerg span.rotulo{
+  display:block;
+  font-size:10.5px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--alerta-tinta);
+  margin-bottom:9px;
+}
+.emerg .linha-tels{display:flex;gap:7px;flex-wrap:wrap}
+.emerg a{
+  background:var(--branco);
+  border-radius:999px;
+  padding:6px 12px;
+  text-decoration:none;
+  color:var(--tinta);
+  font-size:12.5px;
+  white-space:nowrap;
+}
+.emerg a b{color:var(--alerta-tinta);font-variant-numeric:tabular-nums}
+
+/* ---------- barra das seções ---------- */
+.barra{
+  position:sticky;top:0;z-index:5;
+  background:rgba(241,241,238,.93);
+  backdrop-filter:blur(8px);
+  margin:0 -22px;
+  padding:13px 22px;
+  border-bottom:1px solid var(--linha);
+  display:flex;align-items:center;gap:10px;
+}
+.barra a{
+  display:inline-flex;align-items:center;gap:6px;
+  color:var(--mar);text-decoration:none;
+  font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;
+}
+.barra svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.pag h2{
+  font-family:var(--display);
+  font-weight:500;
+  font-size:34px;
+  line-height:1.12;
+  margin:28px 0 16px;
+  text-wrap:balance;
+}
+.pag h3{
+  font-size:11.5px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--mar);
+  margin:28px 0 11px;
+  font-weight:700;
+}
+.pag p{margin:0 0 13px}
+.pag ul.itens{list-style:none;margin:0 0 13px;padding:0}
+.pag ul.itens li{
+  padding:11px 0 11px 17px;
+  border-bottom:1px solid var(--linha);
+  position:relative;
+  font-size:15px;
+}
+.pag ul.itens li:last-child{border-bottom:0}
+.pag ul.itens li::before{
+  content:"";position:absolute;left:0;top:19px;
+  width:6px;height:6px;border-radius:50%;background:var(--mar-claro);
+  box-shadow:inset 0 0 0 1.5px var(--mar);
+}
+.destaque{
+  background:var(--mar-claro);
+  border-radius:var(--raio);
+  padding:15px 16px;
+  font-size:14.5px;
+  margin:0 0 15px;
+}
+.destaque strong{display:block;margin-bottom:3px}
+.atencao{
+  background:var(--alerta-fundo);
+  border-radius:var(--raio);
+  padding:15px 16px;
+  font-size:14.5px;
+  margin:0 0 15px;
+  color:#5C2321;
+}
+.atencao strong{display:block;margin-bottom:3px;color:var(--alerta-tinta)}
+.nota{font-size:12.5px;color:var(--suave);margin-top:16px}
+
+.fill{
+  background:var(--preencher-fundo);
+  color:var(--preencher-tinta);
+  border-radius:5px;
+  padding:1px 6px;
+  font-size:13px;
+  font-weight:600;
+  white-space:nowrap;
+}
+
+/* dados: wifi, senha da porta */
+.dados{background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio);padding:4px 16px;margin-bottom:15px}
+.dados .par{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0}
+.dados .par + .par{border-top:1px solid var(--linha)}
+.dados .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--suave);flex:0 0 auto}
+.dados .v{font-weight:600;font-size:16px;word-break:break-all;text-align:right;display:flex;align-items:center;gap:9px;justify-content:flex-end;flex-wrap:wrap}
+.copiar{
+  border:1px solid var(--linha);background:var(--branco);color:var(--mar);
+  border-radius:999px;padding:4px 11px;font-family:var(--texto);
+  font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;
+}
+.copiar:hover{background:var(--mar-claro)}
+
+/* lugares */
+.lugar{background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio);padding:15px 16px;margin-bottom:11px}
+.lugar h4{margin:0 0 4px;font-size:16px;font-weight:600}
+.lugar p{margin:0 0 10px;font-size:14px;color:var(--suave);line-height:1.5}
+.lugar a{
+  display:inline-flex;align-items:center;gap:6px;
+  color:var(--mar);text-decoration:none;font-size:12.5px;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;
+}
+.lugar a svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.lugar a:hover{text-decoration:underline}
+
+/* fotos */
+.fotos{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.foto{
+  aspect-ratio:1/1;border-radius:11px;background:var(--mar-claro);
+  display:grid;place-items:center;text-align:center;gap:6px;
+  color:var(--mar);font-size:12.5px;padding:8px;
+}
+.foto svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;opacity:.65}
+
+.navpe{display:flex;gap:9px;margin-top:30px}
+.navpe a{
+  flex:1;text-align:center;text-decoration:none;color:var(--mar);
+  background:var(--branco);
+  border:1px solid var(--linha);border-radius:999px;padding:11px 8px;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;
+}
+.navpe a:hover{background:var(--mar-claro)}
+.navpe a.off{visibility:hidden}
+.rodape{
+  text-align:center;color:var(--suave);font-size:11px;
+  letter-spacing:.13em;text-transform:uppercase;padding:26px 22px 30px;
+}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--mar);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ---------- capa com foto ---------- */
+#capa{padding:0}
+.hero{position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;background:#0E3A48}
+.hero img{width:100%;height:100%;object-fit:cover;object-position:center 68%;display:block}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,28,36,0) 34%,rgba(8,28,36,.45) 62%,rgba(8,28,36,.86) 100%)}
+.hero-texto{position:absolute;left:0;right:0;bottom:30px;z-index:2;text-align:center;padding:0 22px}
+.hero-texto .capa-titulo{color:#fff;margin:0}
+.hero-texto .capa-sub{color:#CFE4EA}
+.capa-rodape{text-align:center;padding:26px 22px 42px}
+
+/* ---------- foto de abertura de seção ---------- */
+.cabecalho-foto{margin:0 0 18px;border-radius:var(--raio);overflow:hidden;aspect-ratio:16/10;background:var(--mar-claro)}
+.cabecalho-foto img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ---------- galeria ---------- */
+.galeria{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.galeria button{padding:0;border:0;background:var(--mar-claro);border-radius:11px;overflow:hidden;cursor:pointer;aspect-ratio:1/1;display:block}
+.galeria img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+.galeria button:hover img{transform:scale(1.04)}
+
+/* ---------- visualizador ---------- */
+.lb{position:fixed;inset:0;z-index:60;background:rgba(9,25,32,.96);display:none;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:20px}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:74vh;object-fit:contain;border-radius:10px}
+.lb .leg{color:#D7E5EA;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;text-align:center}
+.lb .setas{display:flex;gap:10px}
+.lb button{background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:999px;cursor:pointer;font-family:var(--texto)}
+.lb .setas button{padding:10px 22px;font-size:11.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase}
+.lb button:hover{background:rgba(255,255,255,.26)}
+.lb .fechar{position:absolute;top:16px;right:18px;width:40px;height:40px;font-size:20px;line-height:1}
+</style>
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true"><defs>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5.5 9.5V21h13V9.5"/></symbol>
+<symbol id="i-chave" viewBox="0 0 24 24"><circle cx="8" cy="12" r="4"/><path d="M12 12h9M18.5 12v3.5"/></symbol>
+<symbol id="i-doc" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="11" r="2"/><path d="M13.5 10h4M13.5 14h4M5.8 16c.9-1.5 4.5-1.5 5.4 0"/></symbol>
+<symbol id="i-escudo" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.2C19.5 16.5 16 20 12 21.5 8 20 4.5 16.5 4.5 11.2V6z"/><path d="M9.3 12.2l1.9 1.9 3.5-3.6"/></symbol>
+<symbol id="i-casa" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9.5" cy="9.3" r="1.7"/><circle cx="14.5" cy="9.3" r="1.7"/><path d="M7.5 15.3h9"/></symbol>
+<symbol id="i-piscina" viewBox="0 0 24 24"><path d="M2.5 15.5c2.2-1.8 4 1.8 6.2 0s4-1.8 6.2 0 3.6 1.8 5.3 0"/><path d="M2.5 20c2.2-1.8 4 1.8 6.2 0s4-1.8 6.2 0 3.6 1.8 5.3 0"/><path d="M8 13.5V6a2.2 2.2 0 0 1 4.4 0M16 13.5V6a2.2 2.2 0 0 1 4.4 0"/><path d="M8 9.8h4.4"/></symbol>
+<symbol id="i-predio" viewBox="0 0 24 24"><path d="M4 20.5V5.2A1.7 1.7 0 0 1 5.7 3.5h7A1.7 1.7 0 0 1 14.4 5.2v15.3"/><path d="M14.4 20.5V10.5h3.9A1.7 1.7 0 0 1 20 12.2v8.3"/><path d="M7.4 7h3.6M7.4 11h3.6M7.4 15h3.6"/><path d="M2.5 20.5h19"/></symbol>
+<symbol id="i-camera" viewBox="0 0 24 24"><path d="M3.5 8.5h3.2L8.2 6h7.6l1.5 2.5h3.2V19H3.5z"/><circle cx="12" cy="13.3" r="3.4"/></symbol>
+<symbol id="i-ondas" viewBox="0 0 24 24"><path d="M2.5 8.5c2.4-2 4.3 2 6.8 0s4.3-2 6.8 0 4 2 5.4 0"/><path d="M2.5 13.5c2.4-2 4.3 2 6.8 0s4.3-2 6.8 0 4 2 5.4 0"/><path d="M2.5 18.5c2.4-2 4.3 2 6.8 0s4.3-2 6.8 0 4 2 5.4 0"/></symbol>
+<symbol id="i-garfo" viewBox="0 0 24 24"><path d="M7 3v5a2 2 0 0 0 4 0V3M9 10v11"/><path d="M17.5 3c-1.6 1.6-2.2 3.6-2.2 5.6 0 1.6.8 2.6 2.2 2.6V21"/></symbol>
+<symbol id="i-taca" viewBox="0 0 24 24"><path d="M5.5 4h13l-6.5 8z"/><path d="M12 12v7M8.5 19h7"/></symbol>
+<symbol id="i-bussola" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.8"/><path d="M15.6 8.4l-2.1 5.1-5.1 2.1 2.1-5.1z"/></symbol>
+<symbol id="i-sacola" viewBox="0 0 24 24"><path d="M5.2 8h13.6l-1.1 12H6.3z"/><path d="M9 8V6.2a3 3 0 0 1 6 0V8"/></symbol>
+<symbol id="i-pino" viewBox="0 0 24 24"><path d="M12 21.2s7-5.6 7-11.2a7 7 0 1 0-14 0c0 5.6 7 11.2 7 11.2z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+<symbol id="i-fone" viewBox="0 0 24 24"><path d="M6 3.5h3.7l1.8 4.6-2.4 1.5a12.4 12.4 0 0 0 5.3 5.3l1.5-2.4 4.6 1.8V18a2.5 2.5 0 0 1-2.7 2.5C10.4 19.6 4.4 13.6 3.5 6.2A2.5 2.5 0 0 1 6 3.5z"/></symbol>
+<symbol id="i-estrela" viewBox="0 0 24 24"><path d="M12 3.4l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8-5.4 2.8 1-6L3.3 9.8l6-.9z"/></symbol>
+<symbol id="i-faq" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.8"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.8-.9 1.4v.6"/><path d="M12 17.2h.01"/></symbol>
+<symbol id="i-crianca" viewBox="0 0 24 24"><circle cx="12" cy="6" r="2.6"/><path d="M12 8.6v6.2M8 11.4h8M9.6 20.6L12 14.8l2.4 5.8"/></symbol>
+<symbol id="i-chuva" viewBox="0 0 24 24"><path d="M7.4 15.4a3.9 3.9 0 0 1 .3-7.8 5.2 5.2 0 0 1 10 1.2 3.3 3.3 0 0 1-.6 6.6"/><path d="M9.2 18.2l-.9 2.4M13 18.2l-.9 2.4M16.8 18.2l-.9 2.4"/></symbol>
+<symbol id="i-lupa" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M15.8 15.8L21 21"/></symbol>
+<symbol id="i-volta" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+<symbol id="i-mapa" viewBox="0 0 24 24"><path d="M12 21s7-5.6 7-11.2a7 7 0 1 0-14 0C5 15.4 12 21 12 21z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+</defs></svg>
+
+<div class="app">
+
+  <!-- CAPA -->
+  <section class="pag ativa" id="capa">
+    <div class="hero">
+      <img src="capa.jpg" alt="Sala e cozinha da Villa da Serra I">
+      <div class="hero-texto">
+        <h1 class="capa-titulo">Bem vindo</h1>
+        <div class="capa-sub">guia do hóspede</div>
+      </div>
+    </div>
+    <div class="capa-rodape">
+      <div class="capa-nome">Villa da Serra I</div>
+      <div class="capa-local">Paraty, Rio de Janeiro</div>
+      <a class="botao" href="#sumario">Abrir o guia</a>
+    </div>
+  </section>
+
+  <!-- SUMÁRIO -->
+  <section class="pag" id="sumario">
+    <div class="sumario-topo">
+      <h1>Bem vindo</h1>
+      <p>Aproveite sua estadia</p>
+    </div>
+    <div class="busca">
+      <svg aria-hidden="true"><use href="#i-lupa"/></svg>
+      <input id="q" type="search" placeholder="Buscar no guia" aria-label="Buscar no guia" autocomplete="off">
+    </div>
+    <ul class="grade" id="grade"></ul>
+    <p class="vazio" id="vazio">Nada encontrado. Tente outra palavra.</p>
+
+    <div class="cartao-nota">
+      <strong>Deixe este guia no celular</strong>
+      <p>No iPhone, toque em Compartilhar e depois em “Adicionar à Tela de Início”. No Android, abra o menu do navegador e escolha “Adicionar à tela inicial”.</p>
+    </div>
+
+    <div class="emerg">
+      <span class="rotulo">Emergência</span>
+      <div class="linha-tels">
+        <a href="tel:190"><b>190</b> polícia</a>
+        <a href="tel:192"><b>192</b> SAMU</a>
+        <a href="tel:193"><b>193</b> bombeiros</a>
+      </div>
+    </div>
+    <p class="rodape">Villa da Serra I · Paraty</p>
+  </section>
+
+  <div id="paginas"></div>
+</div>
+
+  <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+    <button class="fechar" type="button" id="lbFechar" aria-label="Fechar">&times;</button>
+    <img id="lbImg" src="" alt="">
+    <p class="leg" id="lbLeg"></p>
+    <div class="setas">
+      <button type="button" id="lbAnt">Anterior</button>
+      <button type="button" id="lbProx">Próxima</button>
+    </div>
+  </div>
+
+
+<script>
+/* =====================================================================
+   TODO O CONTEÚDO DO GUIA ESTÁ NESTE OBJETO.
+   Para outro imóvel: copie o arquivo e edite só daqui até o fim do GUIA.
+   Texto entre [[colchetes duplos]] aparece como etiqueta amarela de
+   pendência. Troque pelo valor real e a etiqueta some sozinha.
+   ===================================================================== */
+const FOTOS = [
+  {a:"01", l:"Sala e cozinha"},
+  {a:"02", l:"Sala de estar"},
+  {a:"03", l:"Sala e área de jantar"},
+  {a:"04", l:"Vista da piscina pela sala"},
+  {a:"05", l:"Quarto de casal"},
+  {a:"06", l:"Quarto com bicamas"},
+  {a:"07", l:"Quarto com bicamas, outro ângulo"},
+  {a:"08", l:"Segundo quarto"},
+  {a:"09", l:"Espaço de trabalho"}
+];
+
+const GUIA = {
+  cidade: "Paraty RJ",
+  secoes: [
+    {
+      id:"boasvindas", titulo:"Boas vindas", icone:"i-home",
+      blocos:[
+        {t:"h2", v:"Boas vindas"},
+        {t:"foto", v:"02", alt:"Sala de estar da Villa da Serra I"},
+        {t:"p", v:"Que bom ter você aqui. Esta é a <strong>Villa da Serra I</strong>, uma das três casas modernas da Villa da Serra, em Paraty."},
+        {t:"p", v:"São 2 quartos com ar condicionado, um com cama de casal e outro com bicamas, mais um sofá cama de casal na sala, para até 6 pessoas. A casa é um sobrado, entregue em outubro de 2022."},
+        {t:"p", v:"Neste guia você encontra:"},
+        {t:"ul", v:[
+          "Como entrar, com a fechadura de senha digital",
+          "A senha do wifi e como usar os equipamentos",
+          "A churrasqueira individual nos fundos e a piscina compartilhada",
+          "Cachoeiras, restaurantes e o centro histórico"
+        ]},
+        {t:"p", v:"Cuide da nossa casa como se fosse sua. Qualquer coisa, é só chamar no WhatsApp."}
+      ]
+    },
+    {
+      id:"entrada", titulo:"Entrada e saída", icone:"i-chave",
+      blocos:[
+        {t:"h2", v:"Entrada e saída"},
+        {t:"h3", v:"Chegada"},
+        {t:"p", v:"A entrada é a partir das [[horário de entrada]]. O acesso é autônomo, pela <strong>fechadura de senha digital</strong> da porta."},
+        {t:"destaque", v:"<strong>A senha da fechadura vai por mensagem</strong>Enviamos junto com as instruções de acesso pouco antes da sua chegada."},
+        {t:"ul", v:[
+          "A casa é a <strong>Villa da Serra I</strong>, a primeira do conjunto de três.",
+          "Há <strong>1 vaga de estacionamento</strong>, para carro pequeno ou médio. Carro grande fica na rua, onde o estacionamento é livre.",
+          "O acesso tem escadas, então planeje a subida da bagagem."
+        ]},
+        {t:"h3", v:"Durante a estadia"},
+        {t:"ul", v:[
+          "Leve o lixo para a lixeira todos os dias, já separado.",
+          "Deixe louças e panelas na pia sem restos de comida.",
+          "Não é preciso limpar a casa no dia a dia."
+        ]},
+        {t:"h3", v:"Saída"},
+        {t:"p", v:"A saída é até as [[horário de saída]]. Antes de ir embora:"},
+        {t:"ul", v:[
+          "Leve o lixo para a lixeira.",
+          "Deixe a louça lavada.",
+          "Apague bem as brasas da churrasqueira, se tiver usado.",
+          "Feche as janelas, desligue o ar condicionado e as luzes.",
+          "Confira os dois quartos, o banheiro e a área de churrasco antes de fechar a porta."
+        ]}
+      ]
+    },
+    {
+      id:"regras", titulo:"Regras da casa", icone:"i-escudo",
+      blocos:[
+        {t:"h2", v:"Regras da casa"},
+        {t:"p", v:"O serviço contratado é a <strong>locação do espaço</strong>. Não há serviço de hotelaria nem de alimentação incluído."},
+        {t:"ul", v:[
+          "<strong>Até 6 hóspedes</strong> pernoitando. Visitantes e crianças também contam.",
+          "<strong>Visitantes</strong> só com aviso antes.",
+          "<strong>Proibido fumar</strong> dentro da casa, inclusive vape e cigarro eletrônico.",
+          "<strong>Festas e eventos não são permitidos.</strong>",
+          "<strong>Silêncio das 22h às 8h.</strong> As casas são próximas e o som passa.",
+          "<strong>Pets:</strong> [[permitido ou não, e quantos]].",
+          "Não é permitida fotografia ou filmagem comercial.",
+          "Água, luz e internet são fornecidas por terceiros e podem ter quedas fora do nosso controle."
+        ]},
+        {t:"h3", v:"Enxoval e limpeza"},
+        {t:"ul", v:[
+          "Fornecemos <strong>1 jogo de roupa de cama e banho por hóspede</strong>, sem troca durante a estadia.",
+          "A troca só acontece com uma limpeza extra contratada, por [[valor da limpeza extra]], agendada com antecedência.",
+          "<strong>Não fornecemos toalha de praia.</strong>",
+          "Traga seus produtos de higiene pessoal e de limpeza básica, como detergente.",
+          "Traga carvão, se for usar a churrasqueira."
+        ]},
+        {t:"h3", v:"Segurança"},
+        {t:"ul", v:[
+          "Há <strong>câmeras de segurança nas áreas externas</strong>: em frente à garagem, do outro lado da rua e na entrada da Villa. Nenhuma dentro das casas.",
+          "A casa é um sobrado e tem escadas. Atenção redobrada com crianças.",
+          "A piscina é compartilhada entre as três casas e <strong>não tem salva vidas</strong>."
+        ]}
+      ]
+    },
+    {
+      id:"faq", titulo:"Perguntas", icone:"i-faq",
+      blocos:[
+        {t:"h2", v:"Perguntas frequentes"},
+        {t:"h3", v:"Quantas pessoas cabem?"},
+        {t:"p", v:"Seis. São 2 quartos, um com cama de casal e outro com bicamas, mais um sofá cama de casal na sala."},
+        {t:"h3", v:"A piscina é só da casa?"},
+        {t:"p", v:"Não. É compartilhada entre as três casas da Villa, com espaço para crianças e adultos. A área comum tem mesa com 4 cadeiras, ombrelone, duas poltronas sob um pergolado e um balanço."},
+        {t:"h3", v:"A churrasqueira é compartilhada?"},
+        {t:"p", v:"Não, essa é individual. Fica nos fundos da sua casa, com mesa e 2 cadeiras só para vocês. O carvão não está incluído."},
+        {t:"h3", v:"Quantos carros cabem?"},
+        {t:"p", v:"Uma vaga por casa, para carro pequeno ou médio. Carro grande estaciona na rua, de graça."},
+        {t:"h3", v:"O que preciso levar?"},
+        {t:"ul", v:[
+          "Produtos de higiene pessoal.",
+          "Detergente e material de limpeza básica.",
+          "Toalha de praia, porque só fornecemos as de banho.",
+          "Carvão para a churrasqueira."
+        ]},
+        {t:"h3", v:"Dá para alugar as três casas juntas?"},
+        {t:"p", v:"Dá. São 3 sobrados, 6 pessoas em cada, até 18 no total. Consulte a disponibilidade com antecedência."},
+        {t:"h3", v:"Tem troca de roupa de cama?"},
+        {t:"p", v:"Não durante a estadia. A troca só acontece com uma limpeza extra contratada e agendada antes."},
+        {t:"h3", v:"Preciso limpar antes de sair?"},
+        {t:"p", v:"Não. Só leve o lixo e deixe a louça lavada."}
+      ]
+    },
+    {
+      id:"contatos", titulo:"Contatos", icone:"i-fone",
+      blocos:[
+        {t:"h2", v:"Contatos"},
+        {t:"h3", v:"Villa da Serra"},
+        {t:"p", v:"WhatsApp <strong>+55 11 99432 9460</strong><br>Respondemos normalmente em até uma hora."},
+        {t:"h3", v:"Emergência"},
+        {t:"tels"},
+        {t:"h3", v:"Saúde"},
+        {t:"p", v:"[[hospital ou pronto socorro que você indica em Paraty]]"},
+        {t:"nota", v:"Problema com luz, água ou a fechadura: chame no WhatsApp. Resolvemos o mais rápido possível."}
+      ]
+    },
+    {
+      id:"casa", titulo:"A casa", icone:"i-casa",
+      blocos:[
+        {t:"h2", v:"Como usar a casa"},
+        {t:"foto", v:"01", alt:"Sala e cozinha da Villa da Serra I"},
+        {t:"h3", v:"Wifi"},
+        {t:"dados", itens:[
+          {k:"Rede", v:"[[nome da rede]]", copiar:false},
+          {k:"Senha", v:"[[senha do wifi]]", copiar:true}
+        ]},
+        {t:"h3", v:"Cozinha"},
+        {t:"ul", v:[
+          "<strong>Cozinha completa</strong>, com fogão em ilha, forno elétrico, micro ondas e geladeira com freezer.",
+          "Talheres, copos, pratos, taças, panelas e abridores já estão na casa.",
+          "<strong>Fogão a gás:</strong> abra o registro antes de acender e feche ao terminar.",
+          "<strong>Micro ondas:</strong> nada de metal nem papel alumínio.",
+          "Traga seu detergente e material de limpeza básica."
+        ]},
+        {t:"h3", v:"Climatização"},
+        {t:"ul", v:[
+          "Há <strong>ar condicionado nos dois quartos</strong>. Use o controle de cada ambiente.",
+          "Feche portas e janelas enquanto estiver ligado e desligue ao sair.",
+          "A sala tem ventilador de teto."
+        ]},
+        {t:"h3", v:"TV e trabalho"},
+        {t:"ul", v:[
+          "A TV da sala tem [[quais aplicativos estão configurados]].",
+          "Não altere o usuário nem a senha das contas.",
+          "Há um <strong>espaço de trabalho</strong> no andar de cima, com mesa e cadeira."
+        ]},
+        {t:"h3", v:"Lavanderia e banho"},
+        {t:"ul", v:[
+          "Máquina de lavar: [[tem ou não]].",
+          "Ferro e varal: [[tem ou não, e onde ficam]].",
+          "Chuveiro com água quente."
+        ]},
+        {t:"atencao", v:"<strong>A casa é um sobrado</strong>A escada é aberta, com degraus vazados. Atenção com crianças pequenas e com pé molhado vindo da piscina."}
+      ]
+    },
+    {
+      id:"externa", titulo:"Churrasco e piscina", icone:"i-piscina",
+      blocos:[
+        {t:"h2", v:"Área externa"},
+        {t:"foto", v:"04", alt:"Vista da piscina pela sala"},
+        {t:"h3", v:"Churrasqueira"},
+        {t:"p", v:"Cada casa tem a <strong>sua própria área de churrasco nos fundos</strong>, com churrasqueira, mesa e 2 cadeiras. Não é compartilhada."},
+        {t:"ul", v:[
+          "<strong>O carvão não está incluído.</strong> Traga o seu.",
+          "Apague bem as brasas ao terminar e deixe a grelha limpa.",
+          "Não deixe a churrasqueira acesa sem ninguém por perto."
+        ]},
+        {t:"h3", v:"Piscina"},
+        {t:"p", v:"A piscina é <strong>compartilhada entre as três casas</strong>, com espaço para crianças e para adultos."},
+        {t:"ul", v:[
+          "Horário de uso: [[horário da piscina]].",
+          "Não há salva vidas. Criança na água sempre com um adulto por perto.",
+          "Leve a sua toalha. As de banho da casa não vão para a piscina."
+        ]},
+        {t:"h3", v:"Área comum"},
+        {t:"p", v:"Junto da piscina há mesa com 4 cadeiras, ombrelone, duas poltronas sob um pergolado e um balanço. Tudo em fibra sintética e alumínio."},
+        {t:"nota", v:"Como o espaço é dividido com as outras duas casas, vale combinar os horários de uso em dia cheio."}
+      ]
+    },
+    {
+      id:"criancas", titulo:"Com crianças", icone:"i-crianca",
+      blocos:[
+        {t:"h2", v:"Com crianças"},
+        {t:"h3", v:"Na casa"},
+        {t:"ul", v:[
+          "A casa é sobrado e a <strong>escada é aberta</strong>. É o ponto de atenção número um.",
+          "O quarto com bicamas acomoda bem duas crianças.",
+          "Berço: [[tem ou não]].",
+          "Crianças contam no limite de 6 pessoas."
+        ]},
+        {t:"h3", v:"Na piscina"},
+        {t:"ul", v:[
+          "A piscina tem parte rasa, mas <strong>não tem salva vidas</strong>.",
+          "Criança na água sempre acompanhada de um adulto.",
+          "A área é compartilhada com as outras casas, então pode haver outras famílias ao mesmo tempo."
+        ]},
+        {t:"h3", v:"Passeios"},
+        {t:"p", v:"A Cachoeira do Tobogã é a preferida das crianças maiores, pelo escorregador natural na pedra. Para os pequenos, o passeio de barco pelas ilhas e o centro histórico funcionam melhor."}
+      ]
+    },
+    {
+      id:"fotos", titulo:"Fotos", icone:"i-camera",
+      blocos:[
+        {t:"h2", v:"Fotos"},
+        {t:"p", v:"Para você reconhecer os ambientes antes de chegar."},
+        {t:"galeria"},
+        {t:"nota", v:"Toque em qualquer foto para ampliar."}
+      ]
+    },
+    {
+      id:"comer", titulo:"Onde comer", icone:"i-garfo",
+      blocos:[
+        {t:"h2", v:"Onde comer"},
+        {t:"lugares", v:[
+          {n:"Restaurante Arte e Sabor", d:"Um dos mais bem avaliados da cidade, no centro histórico."},
+          {n:"Maria Beijinho", d:"Café com boa nota, bom para uma pausa doce durante o passeio."},
+          {n:"Restaurante Poço do Tarzan", d:"Junto a um poço natural, na estrada Paraty Cunha. Boa parada em dia de cachoeira."}
+        ]},
+        {t:"nota", v:"Confirme o horário antes de ir, principalmente fora da temporada."}
+      ]
+    },
+    {
+      id:"beber", titulo:"Onde beber", icone:"i-taca",
+      blocos:[
+        {t:"h2", v:"Onde beber"},
+        {t:"lugares", v:[
+          {n:"Van Gogh Bar & Burguer", d:"Bar e hamburgueria no centro histórico, boa opção para a noite."},
+          {n:"Alambique Engenho D'Ouro", d:"Na estrada Paraty Cunha. Visita guiada e degustação da cachaça de Paraty."}
+        ]},
+        {t:"nota", v:"Paraty é terra de cachaça. Vale conhecer um alambique de dia e deixar a noite para o centro."}
+      ]
+    },
+    {
+      id:"visitar", titulo:"O que visitar", icone:"i-bussola",
+      blocos:[
+        {t:"h2", v:"O que visitar"},
+        {t:"lugares", v:[
+          {n:"Centro Histórico de Paraty", d:"Ruas de pedra, casario colonial e as igrejas. O calçamento é irregular, então deixe o carro fora e vá a pé."},
+          {n:"Trilha do Poço dos Ingleses", d:"A uma curta caminhada da Villa, com trilha na mata."},
+          {n:"Cachoeira do Tobogã", d:"Famosa pelo tobogã natural na pedra. A mais divertida da região."},
+          {n:"Cachoeira da Pedra Branca", d:"Uma das mais próximas, boa para um banho rápido no meio da mata."},
+          {n:"Museu de Arte Sacra de Paraty", d:"No centro histórico, pequeno e rápido de visitar."},
+          {n:"Passeio de barco pelas ilhas", d:"Saídas do cais para as ilhas e praias da baía. Contrate no píer."}
+        ]},
+        {t:"nota", v:"Confira horário e condição da estrada antes de subir para as cachoeiras, principalmente depois de chuva."}
+      ]
+    },
+    {
+      id:"chuva", titulo:"Dia de chuva", icone:"i-chuva",
+      blocos:[
+        {t:"h2", v:"Dia de chuva"},
+        {t:"p", v:"Chove bastante em Paraty, e a serra deixa o tempo ainda mais instável. Algumas saídas."},
+        {t:"ul", v:[
+          "O <strong>centro histórico</strong> rende mesmo com chuva: lojas, galerias e cafés sob as varandas.",
+          "Um <strong>alambique</strong> com visita guiada é programa coberto e termina em degustação.",
+          "O <strong>Museu de Arte Sacra</strong> é rápido e fica no centro."
+        ]},
+        {t:"atencao", v:"<strong>Cachoeira em dia de chuva, não</strong>O volume de água sobe rápido e as pedras ficam escorregadias. Deixe para outro dia."},
+        {t:"p", v:"Em casa, a churrasqueira fica nos fundos e a área é coberta em boa parte, então o churrasco não precisa ser cancelado."}
+      ]
+    },
+    {
+      id:"compras", titulo:"Compras", icone:"i-sacola",
+      blocos:[
+        {t:"h2", v:"Compras e mercado"},
+        {t:"lugares", v:[
+          {n:"Super Carlão Supermercados Avenida", d:"Supermercado bem avaliado e relativamente perto, prático para abastecer a cozinha."},
+          {n:"[[farmácia que você indica]]", d:"[[distância e horário]]"}
+        ]},
+        {t:"nota", v:"Faça o mercado grande na chegada. Em alta temporada e feriado a cidade lota e o centro fica difícil de acessar de carro."}
+      ]
+    },
+    {
+      id:"chegar", titulo:"Como chegar", icone:"i-pino",
+      blocos:[
+        {t:"h2", v:"Como chegar"},
+        {t:"h3", v:"Endereço"},
+        {t:"p", v:"[[endereço completo da Villa da Serra]]<br>Paraty, Rio de Janeiro."},
+        {t:"h3", v:"De carro"},
+        {t:"ul", v:[
+          "<strong>De São Paulo:</strong> Ayrton Senna ou Dutra até Taubaté, depois a Rodovia Oswaldo Cruz descendo a serra até Ubatuba, e a Rio Santos sentido Paraty.",
+          "<strong>Do Rio de Janeiro:</strong> pela Rio Santos, sentido sul, direto até Paraty.",
+          "A descida da serra é sinuosa. Saia com folga e evite dirigir à noite com neblina."
+        ]},
+        {t:"h3", v:"Estacionamento"},
+        {t:"ul", v:[
+          "<strong>1 vaga por casa</strong>, para carro pequeno ou médio.",
+          "Carro grande estaciona na rua, onde é gratuito."
+        ]},
+        {t:"h3", v:"Dentro da cidade"},
+        {t:"p", v:"Ter carro ajuda muito, principalmente para as cachoeiras e as praias. No centro histórico o calçamento é de pedras irregulares, então o melhor é deixar o carro fora e caminhar."}
+      ]
+    },
+    {
+      id:"ateLogo", titulo:"Até logo", icone:"i-estrela",
+      blocos:[
+        {t:"h2", v:"Obrigado pela estadia"},
+        {t:"p", v:"Esperamos que a casa tenha sido do jeito que você imaginou."},
+        {t:"p", v:"Se gostou, algumas palavras na avaliação ajudam muito e orientam quem vem depois. Se algo não saiu bem, prefiro saber direto por mensagem para corrigir."},
+        {t:"nota", v:"Volte quando quiser. Temos também a Cobertura Golden Sea, no Guarujá."}
+      ]
+    }
+  ]
+};
+/* ====================== fim do conteúdo editável ====================== */
+
+const esc = s => String(s);
+const attr = s => String(s).replace(/"/g, "&quot;");
+const marcar = s => esc(s).replace(/\[\[(.+?)\]\]/g, '<span class="fill">$1</span>');
+const pendente = s => /\[\[/.test(String(s || ""));
+const semAcento = s => String(s).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+const mapa = termo => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(termo + ", " + GUIA.cidade);
+
+const telsHTML = `<div class="emerg"><span class="rotulo">Emergência</span><div class="linha-tels">
+  <a href="tel:190"><b>190</b> polícia</a><a href="tel:192"><b>192</b> SAMU</a><a href="tel:193"><b>193</b> bombeiros</a>
+</div></div>`;
+
+function blocoHTML(b){
+  switch(b.t){
+    case "h2": return `<h2>${marcar(b.v)}</h2>`;
+    case "h3": return `<h3>${marcar(b.v)}</h3>`;
+    case "p": return `<p>${marcar(b.v)}</p>`;
+    case "nota": return `<p class="nota">${marcar(b.v)}</p>`;
+    case "destaque": return `<div class="destaque">${marcar(b.v)}</div>`;
+    case "atencao": return `<div class="atencao">${marcar(b.v)}</div>`;
+    case "ul": return `<ul class="itens">${b.v.map(i => `<li>${marcar(i)}</li>`).join("")}</ul>`;
+    case "tels": return telsHTML;
+    case "dados": return `<div class="dados">${b.itens.map(it => {
+        const botao = (it.copiar && !pendente(it.v))
+          ? `<button class="copiar" type="button" data-valor="${attr(it.v)}">copiar</button>` : "";
+        return `<div class="par"><span class="k">${esc(it.k)}</span><span class="v">${marcar(it.v)}${botao}</span></div>`;
+      }).join("")}</div>`;
+    case "foto": return `<div class="cabecalho-foto"><img src="${esc(b.v)}.jpg" loading="lazy" alt="${attr(b.alt || "")}"></div>`;
+    case "galeria": return `<div class="galeria">${FOTOS.map((f, i) => `<button type="button" data-foto="${i}" aria-label="Ampliar: ${attr(f.l)}"><img src="${f.a}t.jpg" loading="lazy" alt="${attr(f.l)}"></button>`).join("")}</div>`;
+    case "lugares": return b.v.map(l => {
+        const link = pendente(l.n) ? ""
+          : `<a href="${l.url || mapa(l.busca || l.n)}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-mapa"/></svg>Ver no mapa</a>`;
+        return `<div class="lugar"><h4>${marcar(l.n)}</h4><p>${marcar(l.d)}</p>${link}</div>`;
+      }).join("");
+    case "botao": return pendente(b.href)
+        ? `<p>${marcar(b.href)}</p>`
+        : `<p><a class="botao" href="${esc(b.href)}" target="_blank" rel="noopener">${esc(b.v)}</a></p>`;
+    default: return "";
+  }
+}
+
+const textoPlano = s => s.blocos.map(b => {
+  if (Array.isArray(b.v)) return b.v.map(x => typeof x === "string" ? x : `${x.n} ${x.d}`).join(" ");
+  if (Array.isArray(b.itens)) return b.itens.map(x => `${x.k} ${x.v}`).join(" ");
+  if (b.t === "galeria") return FOTOS.map(f => f.l).join(" ");
+  if (b.t === "foto") return "";
+  return [b.v].filter(Boolean).join(" ");
+}).join(" ").replace(/<[^>]+>/g, " ");
+
+/* monta a grade do sumário */
+const grade = document.getElementById("grade");
+grade.innerHTML = GUIA.secoes.map(s =>
+  `<li data-busca="${attr(semAcento(s.titulo + " " + textoPlano(s)))}">
+     <a href="#${s.id}"><span class="bolha"><svg aria-hidden="true"><use href="#${s.icone}"/></svg></span>${esc(s.titulo)}</a>
+   </li>`).join("");
+
+/* monta as páginas */
+document.getElementById("paginas").innerHTML = GUIA.secoes.map((s, i) => {
+  const ant = GUIA.secoes[i-1], prox = GUIA.secoes[i+1];
+  return `<section class="pag" id="${s.id}">
+    <div class="barra"><a href="#sumario"><svg aria-hidden="true"><use href="#i-volta"/></svg>Sumário</a></div>
+    ${s.blocos.map(blocoHTML).join("")}
+    <nav class="navpe">
+      <a class="${ant?"":"off"}" href="#${ant?ant.id:""}">${ant?esc(ant.titulo):""}</a>
+      <a class="${prox?"":"off"}" href="#${prox?prox.id:""}">${prox?esc(prox.titulo):""}</a>
+    </nav>
+    <p class="rodape">Villa da Serra I · Paraty</p>
+  </section>`;
+}).join("");
+
+/* navegação por hash */
+const validos = new Set(["capa","sumario", ...GUIA.secoes.map(s => s.id)]);
+function mostrar(){
+  const alvo = validos.has(location.hash.slice(1)) ? location.hash.slice(1) : "capa";
+  document.querySelectorAll(".pag").forEach(p => p.classList.toggle("ativa", p.id === alvo));
+  window.scrollTo(0, 0);
+}
+window.addEventListener("hashchange", mostrar);
+mostrar();
+
+/* busca */
+const q = document.getElementById("q"), vazio = document.getElementById("vazio");
+q.addEventListener("input", () => {
+  const termo = semAcento(q.value.trim());
+  let achou = 0;
+  grade.querySelectorAll("li").forEach(li => {
+    const ok = !termo || li.dataset.busca.includes(termo);
+    li.style.display = ok ? "" : "none";
+    if (ok) achou++;
+  });
+  vazio.style.display = achou ? "none" : "block";
+});
+
+
+/* visualizador de fotos */
+const lb = document.getElementById("lb"), lbImg = document.getElementById("lbImg"), lbLeg = document.getElementById("lbLeg");
+let lbI = 0;
+function abrirFoto(i){
+  lbI = (i + FOTOS.length) % FOTOS.length;
+  const f = FOTOS[lbI];
+  lbImg.src = f.a + ".jpg";
+  lbImg.alt = f.l;
+  lbLeg.textContent = `${f.l} · ${lbI + 1} de ${FOTOS.length}`;
+  lb.classList.add("on");
+}
+function fecharFoto(){ lb.classList.remove("on"); lbImg.src = ""; }
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-foto]");
+  if (b) abrirFoto(Number(b.dataset.foto));
+});
+document.getElementById("lbFechar").addEventListener("click", fecharFoto);
+document.getElementById("lbAnt").addEventListener("click", () => abrirFoto(lbI - 1));
+document.getElementById("lbProx").addEventListener("click", () => abrirFoto(lbI + 1));
+lb.addEventListener("click", e => { if (e.target === lb) fecharFoto(); });
+document.addEventListener("keydown", e => {
+  if (!lb.classList.contains("on")) return;
+  if (e.key === "Escape") fecharFoto();
+  if (e.key === "ArrowLeft") abrirFoto(lbI - 1);
+  if (e.key === "ArrowRight") abrirFoto(lbI + 1);
+});
+
+/* copiar */
+document.addEventListener("click", async e => {
+  const b = e.target.closest(".copiar");
+  if (!b) return;
+  const antes = b.textContent;
+  try { await navigator.clipboard.writeText(b.dataset.valor || ""); b.textContent = "copiado"; }
+  catch { b.textContent = "copie acima"; }
+  setTimeout(() => b.textContent = antes, 2000);
+});
+</script>
+</body>
+</html>
