@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guia do Hóspede Golden Sea</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Coluna única no formato de celular, mar e areia do Guarujá, serifa só nos títulos */
+:root{
+  --areia:#F4F0E8;
+  --papel:#FFFFFF;
+  --tinta:#16272F;
+  --suave:#687C86;
+  --mar:#13596E;
+  --mar-claro:#E2EDF0;
+  --linha:#E7E0D4;
+  --preencher-fundo:#FBEEDA;
+  --preencher-tinta:#8F5A12;
+  --alerta-fundo:#FAE8E8;
+  --alerta-tinta:#95332F;
+  --display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --texto:"Karla","Helvetica Neue",Arial,sans-serif;
+  --raio:14px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--areia);
+  color:var(--tinta);
+  font-family:var(--texto);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+@media (min-width:720px){
+  body{
+    background:
+      radial-gradient(900px 500px at 50% -10%, #D8E6EA 0%, rgba(216,230,234,0) 70%),
+      var(--areia);
+    padding:28px 16px;
+  }
+}
+.app{
+  max-width:468px;
+  margin:0 auto;
+  background:var(--papel);
+  min-height:100vh;
+}
+@media (min-width:720px){
+  .app{
+    min-height:0;
+    border-radius:24px;
+    box-shadow:0 24px 60px rgba(22,39,47,.13), 0 2px 6px rgba(22,39,47,.06);
+    overflow:hidden;
+  }
+}
+.pag{display:none;padding:0 22px 44px}
+.pag.ativa{display:block}
+
+/* ---------- capa ---------- */
+#capa{padding:26px 22px 40px;text-align:center}
+.arco{
+  width:100%;
+  aspect-ratio:3/3.4;
+  border-radius:1000px 1000px 18px 18px;
+  overflow:hidden;
+  background:var(--mar-claro);
+}
+.arco svg{display:block;width:100%;height:100%}
+.capa-titulo{
+  font-family:var(--display);
+  font-weight:500;
+  font-size:44px;
+  line-height:1;
+  letter-spacing:.07em;
+  margin:26px 0 0;
+  text-transform:uppercase;
+  text-wrap:balance;
+}
+.capa-sub{
+  font-family:var(--display);
+  font-style:italic;
+  font-size:25px;
+  color:var(--mar);
+  margin-top:2px;
+}
+.capa-nome{
+  margin-top:20px;
+  font-size:12.5px;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+  font-weight:600;
+}
+.capa-local{
+  font-size:12.5px;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:var(--suave);
+  margin-top:5px;
+}
+.botao{
+  display:inline-block;
+  margin-top:26px;
+  background:var(--mar);
+  color:#fff;
+  text-decoration:none;
+  padding:14px 34px;
+  border-radius:999px;
+  font-size:12.5px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  font-weight:600;
+}
+.botao:hover{background:#0F4A5C}
+
+/* ---------- sumário ---------- */
+.sumario-topo{text-align:center;padding:34px 0 20px}
+.sumario-topo h1{
+  font-family:var(--display);
+  font-weight:500;
+  font-size:34px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0;
+}
+.sumario-topo p{
+  margin:4px 0 0;
+  font-size:11.5px;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+  color:var(--suave);
+}
+.busca{position:relative;margin-bottom:26px}
+.busca svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);width:17px;height:17px;stroke:var(--suave);fill:none;stroke-width:1.7}
+.busca input{
+  width:100%;
+  font-family:var(--texto);
+  font-size:15px;
+  color:var(--tinta);
+  padding:13px 16px 13px 42px;
+  border:1px solid var(--linha);
+  border-radius:999px;
+  background:var(--papel);
+}
+.busca input:focus{outline:2px solid var(--mar);outline-offset:1px;border-color:transparent}
+.grade{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px 10px;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.grade a{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:9px;
+  text-decoration:none;
+  color:var(--tinta);
+  font-size:12.5px;
+  text-align:center;
+  line-height:1.25;
+}
+.bolha{
+  width:52px;height:52px;
+  border-radius:50%;
+  background:var(--mar-claro);
+  display:grid;place-items:center;
+}
+.grade a:hover .bolha{background:#CFE1E6}
+.bolha svg{width:23px;height:23px;stroke:var(--mar);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.vazio{text-align:center;color:var(--suave);font-size:14px;padding:26px 0;display:none}
+
+.cartao-nota{
+  margin-top:28px;
+  border:1px solid var(--linha);
+  border-radius:var(--raio);
+  padding:16px;
+  text-align:center;
+}
+.cartao-nota strong{display:block;font-size:14.5px;margin-bottom:5px}
+.cartao-nota p{margin:0;font-size:13px;color:var(--suave);line-height:1.5}
+
+.emerg{
+  margin-top:18px;
+  background:var(--alerta-fundo);
+  border-radius:var(--raio);
+  padding:13px 14px 15px;
+}
+.emerg span.rotulo{
+  display:block;
+  font-size:10.5px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--alerta-tinta);
+  margin-bottom:9px;
+}
+.emerg .linha-tels{display:flex;gap:7px;flex-wrap:wrap}
+.emerg a{
+  background:var(--papel);
+  border-radius:999px;
+  padding:6px 12px;
+  text-decoration:none;
+  color:var(--tinta);
+  font-size:12.5px;
+  white-space:nowrap;
+}
+.emerg a b{color:var(--alerta-tinta);font-variant-numeric:tabular-nums}
+
+/* ---------- barra das seções ---------- */
+.barra{
+  position:sticky;top:0;z-index:5;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(8px);
+  margin:0 -22px;
+  padding:13px 22px;
+  border-bottom:1px solid var(--linha);
+  display:flex;align-items:center;gap:10px;
+}
+.barra a{
+  display:inline-flex;align-items:center;gap:6px;
+  color:var(--mar);text-decoration:none;
+  font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;
+}
+.barra svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.pag h2{
+  font-family:var(--display);
+  font-weight:500;
+  font-size:34px;
+  line-height:1.12;
+  margin:28px 0 16px;
+  text-wrap:balance;
+}
+.pag h3{
+  font-size:11.5px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--mar);
+  margin:28px 0 11px;
+  font-weight:700;
+}
+.pag p{margin:0 0 13px}
+.pag ul.itens{list-style:none;margin:0 0 13px;padding:0}
+.pag ul.itens li{
+  padding:11px 0 11px 17px;
+  border-bottom:1px solid var(--linha);
+  position:relative;
+  font-size:15px;
+}
+.pag ul.itens li:last-child{border-bottom:0}
+.pag ul.itens li::before{
+  content:"";position:absolute;left:0;top:19px;
+  width:6px;height:6px;border-radius:50%;background:var(--mar-claro);
+  box-shadow:inset 0 0 0 1.5px var(--mar);
+}
+.destaque{
+  background:var(--mar-claro);
+  border-radius:var(--raio);
+  padding:15px 16px;
+  font-size:14.5px;
+  margin:0 0 15px;
+}
+.destaque strong{display:block;margin-bottom:3px}
+.atencao{
+  background:var(--alerta-fundo);
+  border-radius:var(--raio);
+  padding:15px 16px;
+  font-size:14.5px;
+  margin:0 0 15px;
+  color:#5C2321;
+}
+.atencao strong{display:block;margin-bottom:3px;color:var(--alerta-tinta)}
+.nota{font-size:12.5px;color:var(--suave);margin-top:16px}
+
+.fill{
+  background:var(--preencher-fundo);
+  color:var(--preencher-tinta);
+  border-radius:5px;
+  padding:1px 6px;
+  font-size:13px;
+  font-weight:600;
+  white-space:nowrap;
+}
+
+/* dados: wifi, senha da porta */
+.dados{border:1px solid var(--linha);border-radius:var(--raio);padding:4px 16px;margin-bottom:15px}
+.dados .par{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0}
+.dados .par + .par{border-top:1px solid var(--linha)}
+.dados .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--suave);flex:0 0 auto}
+.dados .v{font-weight:600;font-size:16px;word-break:break-all;text-align:right;display:flex;align-items:center;gap:9px;justify-content:flex-end;flex-wrap:wrap}
+.copiar{
+  border:1px solid var(--linha);background:var(--papel);color:var(--mar);
+  border-radius:999px;padding:4px 11px;font-family:var(--texto);
+  font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;
+}
+.copiar:hover{background:var(--mar-claro)}
+
+/* lugares */
+.lugar{border:1px solid var(--linha);border-radius:var(--raio);padding:15px 16px;margin-bottom:11px}
+.lugar h4{margin:0 0 4px;font-size:16px;font-weight:600}
+.lugar p{margin:0 0 10px;font-size:14px;color:var(--suave);line-height:1.5}
+.lugar a{
+  display:inline-flex;align-items:center;gap:6px;
+  color:var(--mar);text-decoration:none;font-size:12.5px;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;
+}
+.lugar a svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.lugar a:hover{text-decoration:underline}
+
+/* fotos */
+.fotos{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.foto{
+  aspect-ratio:1/1;border-radius:11px;background:var(--mar-claro);
+  display:grid;place-items:center;text-align:center;gap:6px;
+  color:var(--mar);font-size:12.5px;padding:8px;
+}
+.foto svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;opacity:.65}
+
+.navpe{display:flex;gap:9px;margin-top:30px}
+.navpe a{
+  flex:1;text-align:center;text-decoration:none;color:var(--mar);
+  border:1px solid var(--linha);border-radius:999px;padding:11px 8px;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;
+}
+.navpe a:hover{background:var(--mar-claro)}
+.navpe a.off{visibility:hidden}
+.rodape{
+  text-align:center;color:var(--suave);font-size:11px;
+  letter-spacing:.13em;text-transform:uppercase;padding:26px 22px 30px;
+}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--mar);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ---------- capa com foto ---------- */
+#capa{padding:0}
+.hero{position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;background:#0E3A48}
+.hero img{width:100%;height:100%;object-fit:cover;display:block}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,28,36,0) 34%,rgba(8,28,36,.45) 62%,rgba(8,28,36,.86) 100%)}
+.hero-texto{position:absolute;left:0;right:0;bottom:30px;z-index:2;text-align:center;padding:0 22px}
+.hero-texto .capa-titulo{color:#fff;margin:0}
+.hero-texto .capa-sub{color:#CFE4EA}
+.capa-rodape{text-align:center;padding:26px 22px 42px}
+
+/* ---------- foto de abertura de seção ---------- */
+.cabecalho-foto{margin:0 0 18px;border-radius:var(--raio);overflow:hidden;aspect-ratio:16/10;background:var(--mar-claro)}
+.cabecalho-foto img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ---------- galeria ---------- */
+.galeria{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.galeria button{padding:0;border:0;background:var(--mar-claro);border-radius:11px;overflow:hidden;cursor:pointer;aspect-ratio:1/1;display:block}
+.galeria img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+.galeria button:hover img{transform:scale(1.04)}
+
+/* ---------- visualizador ---------- */
+.lb{position:fixed;inset:0;z-index:60;background:rgba(9,25,32,.96);display:none;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:20px}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:74vh;object-fit:contain;border-radius:10px}
+.lb .leg{color:#D7E5EA;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;text-align:center}
+.lb .setas{display:flex;gap:10px}
+.lb button{background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:999px;cursor:pointer;font-family:var(--texto)}
+.lb .setas button{padding:10px 22px;font-size:11.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase}
+.lb button:hover{background:rgba(255,255,255,.26)}
+.lb .fechar{position:absolute;top:16px;right:18px;width:40px;height:40px;font-size:20px;line-height:1}
+</style>
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true"><defs>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5.5 9.5V21h13V9.5"/></symbol>
+<symbol id="i-chave" viewBox="0 0 24 24"><circle cx="8" cy="12" r="4"/><path d="M12 12h9M18.5 12v3.5"/></symbol>
+<symbol id="i-doc" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="11" r="2"/><path d="M13.5 10h4M13.5 14h4M5.8 16c.9-1.5 4.5-1.5 5.4 0"/></symbol>
+<symbol id="i-escudo" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.2C19.5 16.5 16 20 12 21.5 8 20 4.5 16.5 4.5 11.2V6z"/><path d="M9.3 12.2l1.9 1.9 3.5-3.6"/></symbol>
+<symbol id="i-casa" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9.5" cy="9.3" r="1.7"/><circle cx="14.5" cy="9.3" r="1.7"/><path d="M7.5 15.3h9"/></symbol>
+<symbol id="i-piscina" viewBox="0 0 24 24"><path d="M2.5 15.5c2.2-1.8 4 1.8 6.2 0s4-1.8 6.2 0 3.6 1.8 5.3 0"/><path d="M2.5 20c2.2-1.8 4 1.8 6.2 0s4-1.8 6.2 0 3.6 1.8 5.3 0"/><path d="M8 13.5V6a2.2 2.2 0 0 1 4.4 0M16 13.5V6a2.2 2.2 0 0 1 4.4 0"/><path d="M8 9.8h4.4"/></symbol>
+<symbol id="i-predio" viewBox="0 0 24 24"><path d="M4 20.5V5.2A1.7 1.7 0 0 1 5.7 3.5h7A1.7 1.7 0 0 1 14.4 5.2v15.3"/><path d="M14.4 20.5V10.5h3.9A1.7 1.7 0 0 1 20 12.2v8.3"/><path d="M7.4 7h3.6M7.4 11h3.6M7.4 15h3.6"/><path d="M2.5 20.5h19"/></symbol>
+<symbol id="i-camera" viewBox="0 0 24 24"><path d="M3.5 8.5h3.2L8.2 6h7.6l1.5 2.5h3.2V19H3.5z"/><circle cx="12" cy="13.3" r="3.4"/></symbol>
+<symbol id="i-ondas" viewBox="0 0 24 24"><path d="M2.5 8.5c2.4-2 4.3 2 6.8 0s4.3-2 6.8 0 4 2 5.4 0"/><path d="M2.5 13.5c2.4-2 4.3 2 6.8 0s4.3-2 6.8 0 4 2 5.4 0"/><path d="M2.5 18.5c2.4-2 4.3 2 6.8 0s4.3-2 6.8 0 4 2 5.4 0"/></symbol>
+<symbol id="i-garfo" viewBox="0 0 24 24"><path d="M7 3v5a2 2 0 0 0 4 0V3M9 10v11"/><path d="M17.5 3c-1.6 1.6-2.2 3.6-2.2 5.6 0 1.6.8 2.6 2.2 2.6V21"/></symbol>
+<symbol id="i-taca" viewBox="0 0 24 24"><path d="M5.5 4h13l-6.5 8z"/><path d="M12 12v7M8.5 19h7"/></symbol>
+<symbol id="i-bussola" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.8"/><path d="M15.6 8.4l-2.1 5.1-5.1 2.1 2.1-5.1z"/></symbol>
+<symbol id="i-sacola" viewBox="0 0 24 24"><path d="M5.2 8h13.6l-1.1 12H6.3z"/><path d="M9 8V6.2a3 3 0 0 1 6 0V8"/></symbol>
+<symbol id="i-pino" viewBox="0 0 24 24"><path d="M12 21.2s7-5.6 7-11.2a7 7 0 1 0-14 0c0 5.6 7 11.2 7 11.2z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+<symbol id="i-fone" viewBox="0 0 24 24"><path d="M6 3.5h3.7l1.8 4.6-2.4 1.5a12.4 12.4 0 0 0 5.3 5.3l1.5-2.4 4.6 1.8V18a2.5 2.5 0 0 1-2.7 2.5C10.4 19.6 4.4 13.6 3.5 6.2A2.5 2.5 0 0 1 6 3.5z"/></symbol>
+<symbol id="i-estrela" viewBox="0 0 24 24"><path d="M12 3.4l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8-5.4 2.8 1-6L3.3 9.8l6-.9z"/></symbol>
+<symbol id="i-lupa" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M15.8 15.8L21 21"/></symbol>
+<symbol id="i-volta" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+<symbol id="i-mapa" viewBox="0 0 24 24"><path d="M12 21s7-5.6 7-11.2a7 7 0 1 0-14 0C5 15.4 12 21 12 21z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+</defs></svg>
+
+<div class="app">
+
+  <!-- CAPA -->
+  <section class="pag ativa" id="capa">
+    <div class="hero">
+      <img src="capa.jpg" alt="Piscina da cobertura iluminada ao anoitecer">
+      <div class="hero-texto">
+        <h1 class="capa-titulo">Bem vindo</h1>
+        <div class="capa-sub">guia do hóspede</div>
+      </div>
+    </div>
+    <div class="capa-rodape">
+      <div class="capa-nome">Cobertura Golden Sea</div>
+      <div class="capa-local">Enseada, Guarujá</div>
+      <a class="botao" href="#sumario">Abrir o guia</a>
+    </div>
+  </section>
+
+  <!-- SUMÁRIO -->
+  <section class="pag" id="sumario">
+    <div class="sumario-topo">
+      <h1>Bem vindo</h1>
+      <p>Aproveite sua estadia</p>
+    </div>
+    <div class="busca">
+      <svg aria-hidden="true"><use href="#i-lupa"/></svg>
+      <input id="q" type="search" placeholder="Buscar no guia" aria-label="Buscar no guia" autocomplete="off">
+    </div>
+    <ul class="grade" id="grade"></ul>
+    <p class="vazio" id="vazio">Nada encontrado. Tente outra palavra.</p>
+
+    <div class="cartao-nota">
+      <strong>Deixe este guia no celular</strong>
+      <p>No iPhone, toque em Compartilhar e depois em “Adicionar à Tela de Início”. No Android, abra o menu do navegador e escolha “Adicionar à tela inicial”.</p>
+    </div>
+
+    <div class="emerg">
+      <span class="rotulo">Emergência</span>
+      <div class="linha-tels">
+        <a href="tel:190"><b>190</b> polícia</a>
+        <a href="tel:192"><b>192</b> SAMU</a>
+        <a href="tel:193"><b>193</b> bombeiros</a>
+      </div>
+    </div>
+    <p class="rodape">Villa da Serra · Cobertura Golden Sea</p>
+  </section>
+
+  <div id="paginas"></div>
+</div>
+
+  <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+    <button class="fechar" type="button" id="lbFechar" aria-label="Fechar">&times;</button>
+    <img id="lbImg" src="" alt="">
+    <p class="leg" id="lbLeg"></p>
+    <div class="setas">
+      <button type="button" id="lbAnt">Anterior</button>
+      <button type="button" id="lbProx">Próxima</button>
+    </div>
+  </div>
+
+
+<script>
+/* =====================================================================
+   TODO O CONTEÚDO DO GUIA ESTÁ NESTE OBJETO.
+   Para outro imóvel: copie o arquivo e edite só daqui até o fim do GUIA.
+   Texto entre [[colchetes duplos]] aparece como etiqueta amarela de
+   pendência. Troque pelo valor real e a etiqueta some sozinha.
+   ===================================================================== */
+const FOTOS = [
+  {a:"01", l:"Piscina da cobertura"},
+  {a:"02", l:"Piscina e espreguiçadeira"},
+  {a:"03", l:"Área externa ao anoitecer"},
+  {a:"04", l:"Lounge da varanda"},
+  {a:"05", l:"Vista da cidade"},
+  {a:"06", l:"Mesa sob o guarda sol"},
+  {a:"07", l:"Jantar na varanda"},
+  {a:"08", l:"Jardim vertical"},
+  {a:"09", l:"Sala de jantar"},
+  {a:"10", l:"Sala de estar"},
+  {a:"11", l:"Hall de entrada"},
+  {a:"12", l:"Corredor dos quartos"},
+  {a:"13", l:"Quarto"},
+  {a:"14", l:"Cozinha"},
+  {a:"15", l:"Bancada da cozinha"},
+  {a:"16", l:"Geladeira e forno"},
+  {a:"17", l:"Acesso à cozinha"},
+  {a:"18", l:"Geladeira de bebidas"},
+  {a:"19", l:"Churrasqueira"},
+  {a:"20", l:"Lavanderia"},
+  {a:"21", l:"Lavabo"},
+  {a:"22", l:"Banheiro"}
+];
+
+const GUIA = {
+  cidade: "Enseada, Guarujá SP",
+  secoes: [
+    {
+      id:"boasvindas", titulo:"Boas vindas", icone:"i-home",
+      blocos:[
+        {t:"h2", v:"Boas vindas"},
+        {t:"foto", v:"03", alt:"Área externa da cobertura ao anoitecer"},
+        {t:"p", v:"Que bom ter você aqui. Esta é a <strong>cobertura 161 do Edifício Golden Sea</strong>, na Enseada, Guarujá, operada pela Villa da Serra."},
+        {t:"p", v:"São 3 quartos, piscina privativa na cobertura, área externa com som e vista para o mar. A unidade é autorizada para até 10 pessoas."},
+        {t:"p", v:"Neste guia você encontra:"},
+        {t:"ul", v:[
+          "Como entrar no apartamento e a senha do wifi",
+          "Os documentos que a portaria exige antes da sua chegada",
+          "Como funciona a piscina, a churrasqueira e o som da área externa",
+          "Os serviços do prédio, como gelo e cadeiras de praia",
+          "Praias, restaurantes e passeios por perto"
+        ]},
+        {t:"destaque", v:"<strong>Antes de viajar</strong>Mande o nome completo e o documento de todos os hóspedes. Sem a lista na portaria, o condomínio não libera a entrada de ninguém."},
+        {t:"p", v:"Cuide da nossa casa como se fosse sua. Qualquer coisa, é só chamar no WhatsApp."}
+      ]
+    },
+    {
+      id:"entrada", titulo:"Entrada e saída", icone:"i-chave",
+      blocos:[
+        {t:"h2", v:"Entrada e saída"},
+        {t:"foto", v:"11", alt:"Hall de entrada do apartamento"},
+        {t:"h3", v:"Chegada"},
+        {t:"p", v:"A entrada é a partir das <strong>15h</strong>. Na portaria, cada hóspede apresenta um documento com foto, e os nomes já precisam estar na lista que enviamos."},
+        {t:"p", v:"A porta tem <strong>fechadura eletrônica</strong>. Passe a mão na frente dela para acender o teclado e digite a senha, terminando com a tecla cerquilha."},
+        {t:"destaque", v:"<strong>A senha da fechadura vai por mensagem</strong>Enviamos junto com as instruções de acesso pouco antes da sua chegada."},
+        {t:"ul", v:[
+          "A unidade é a <strong>cobertura 161</strong>.",
+          "Temos direito a <strong>3 vagas de garagem</strong>. Informe modelo, cor e placa de cada carro antes de chegar."
+        ]},
+        {t:"h3", v:"Durante a estadia"},
+        {t:"ul", v:[
+          "Leve o lixo <strong>todos os dias</strong> para a lixeira do edifício, no <strong>G1</strong>.",
+          "O lixo não pode ficar no corredor em hipótese nenhuma.",
+          "Não há lava louças. Lave a louça e deixe na pia ou guardada no armário.",
+          "Fora isso, não é preciso limpar a casa no dia a dia."
+        ]},
+        {t:"h3", v:"Saída"},
+        {t:"p", v:"A saída é até as <strong>15h</strong>. Cada diária corresponde a 24 horas completas de hospedagem."},
+        {t:"destaque", v:"<strong>Você não precisa limpar a casa antes de sair</strong>A limpeza é por nossa conta. Só pedimos que o lixo não fique acumulado."},
+        {t:"ul", v:[
+          "Junte o lixo em sacos plásticos e deixe nas lixeiras do <strong>subsolo e da garagem</strong>.",
+          "<strong>Feche todos os guarda sóis.</strong> O vento aqui é forte e guarda sol aberto quebra vidro.",
+          "Feche as portas de vidro com cuidado e desligue o ar condicionado e as luzes.",
+          "Confira gavetas, banheiros, a área externa e a geladeira de bebidas antes de ir."
+        ]}
+      ]
+    },
+    {
+      id:"documentos", titulo:"Documentos", icone:"i-doc",
+      blocos:[
+        {t:"h2", v:"Documentos para a portaria"},
+        {t:"p", v:"O condomínio exige uma ficha de autorização assinada pelo proprietário com o nome de todos os hóspedes. Sem ela, a portaria não libera a entrada."},
+        {t:"destaque", v:"<strong>Envie até 72 horas antes da chegada</strong>Quanto antes a lista chegar, mais tranquila é a sua entrada."},
+        {t:"h3", v:"O que mandar de cada pessoa"},
+        {t:"ul", v:[
+          "Nome completo, sem abreviações.",
+          "Número do RG ou do CPF.",
+          "Hóspede estrangeiro: número do passaporte.",
+          "Crianças também contam e também precisam constar na lista."
+        ]},
+        {t:"h3", v:"Veículos"},
+        {t:"ul", v:[
+          "Até <strong>3 carros</strong>, que é o limite de vagas da unidade.",
+          "De cada um: modelo, cor e placa.",
+          "Carro não informado fica na rua, porque a portaria não libera a entrada na garagem."
+        ]},
+        {t:"h3", v:"Limite de pessoas"},
+        {t:"p", v:"A cobertura é autorizada para <strong>até 10 ocupantes</strong>, contando adultos e crianças. Esse é um limite do condomínio, não nosso, e a portaria confere."},
+        {t:"p", v:"Mande tudo no WhatsApp <strong>+55 11 99432 9460</strong>."}
+      ]
+    },
+    {
+      id:"regras", titulo:"Regras da casa", icone:"i-escudo",
+      blocos:[
+        {t:"h2", v:"Regras da casa"},
+        {t:"p", v:"O serviço contratado é a <strong>locação do espaço</strong>. Não há serviço de hotelaria nem de alimentação incluído."},
+        {t:"ul", v:[
+          "<strong>Até 10 hóspedes</strong> pernoitando, adultos e crianças.",
+          "<strong>Visitantes</strong> só com aviso antes, e também precisam ser autorizados na portaria.",
+          "<strong>Proibido fumar</strong> dentro do apartamento, inclusive vape e cigarro eletrônico.",
+          "<strong>Festas e eventos não são permitidos.</strong> O condomínio é residencial.",
+          "<strong>Silêncio das 22h às 8h.</strong> Som alto na área externa incomoda os vizinhos.",
+          "<strong>Pets:</strong> permitido 1 pet de pequeno porte.",
+          "Não altere o usuário nem a senha dos aplicativos da TV.",
+          "Não mexa nos registros nem nas bombas da piscina.",
+          "Não mova móveis pesados nem retire objetos da decoração."
+        ]},
+        {t:"h3", v:"Enxoval e limpeza"},
+        {t:"ul", v:[
+          "Fornecemos <strong>1 jogo de roupa de cama</strong>, travesseiros e <strong>1 toalha por hóspede contratado</strong>.",
+          "<strong>Não há troca de enxoval durante a estadia.</strong> A troca só acontece com uma limpeza extra contratada, por <strong>R$ 250,00 por hospedagem</strong>, agendada com antecedência.",
+          "<strong>Não fornecemos toalha de praia.</strong> Traga a sua.",
+          "Traga também seus produtos de higiene pessoal e de limpeza básica, como detergente."
+        ]},
+        {t:"h3", v:"Danos"},
+        {t:"p", v:"Você não precisa limpar antes de sair, mas <strong>manchas, danos ao imóvel e danos ao enxoval podem ser cobrados</strong> depois da saída."},
+        {t:"h3", v:"Manutenção e serviços"},
+        {t:"ul", v:[
+          "A cobertura está completa e funcionando, mas é uma residência: uma lâmpada pode queimar ou um chuveiro pode apresentar defeito. Avise que resolvemos.",
+          "Água, luz e internet são fornecidas por terceiros. Buscamos sempre a melhor solução, mas quedas na cidade fogem do nosso controle."
+        ]}
+      ]
+    },
+    {
+      id:"contatos", titulo:"Contatos", icone:"i-fone",
+      blocos:[
+        {t:"h2", v:"Contatos"},
+        {t:"h3", v:"Villa da Serra"},
+        {t:"p", v:"WhatsApp <strong>+55 11 99432 9460</strong><br>Respondemos normalmente em até uma hora."},
+        {t:"h3", v:"Portaria do condomínio"},
+        {t:"p", v:"Pelo interfone do apartamento, <strong>ramal 10</strong>. Funciona 24 horas."},
+        {t:"tels"},
+        {t:"h3", v:"Hospital"},
+        {t:"lugares", v:[
+          {n:"Hospital Ana Costa Guarujá", d:"Hospital particular na cidade. Em emergência com risco de vida, ligue 192 antes de sair.", url:"https://share.google/ouaqOptGWmwoMRj4F"}
+        ]},
+        {t:"nota", v:"Falta de luz no prédio, elevador parado ou vazamento: chame a portaria primeiro pelo ramal 10. Ela resolve mais rápido."}
+      ]
+    },
+    {
+      id:"cobertura", titulo:"A cobertura", icone:"i-casa",
+      blocos:[
+        {t:"h2", v:"Como usar a casa"},
+        {t:"foto", v:"14", alt:"Cozinha da cobertura"},
+        {t:"h3", v:"Wifi"},
+        {t:"dados", itens:[
+          {k:"Rede", v:"Apto161", copiar:false},
+          {k:"Senha", v:"goldensea125", copiar:true},
+          {k:"Rede 5G", v:"APTO161-5G", copiar:false}
+        ]},
+        {t:"nota", v:"Para usar o som da área externa, conecte o celular na rede APTO161-5G."},
+        {t:"atencao", v:"<strong>Tudo na casa é 110V</strong>Confira a voltagem antes de ligar qualquer aparelho que você trouxe."},
+        {t:"h3", v:"Cozinha"},
+        {t:"ul", v:[
+          "A casa é <strong>completa de utensílios domésticos</strong>: panelas, talheres, taças e louça.",
+          "<strong>Geladeira duplex com freezer</strong> na cozinha.",
+          "<strong>Segunda geladeira na área externa</strong>, para cervejas e bebidas.",
+          "<strong>Micro ondas:</strong> nada de metal nem papel alumínio.",
+          "<strong>Não há lava louças.</strong> Lave a louça e deixe na pia ou guardada no armário.",
+          "Traga seu detergente e material de limpeza básica."
+        ]},
+        {t:"h3", v:"TV"},
+        {t:"ul", v:[
+          "A TV tem aplicativos já configurados, como <strong>Netflix e Globoplay</strong>.",
+          "<strong>Não altere o usuário nem a senha</strong> das contas. Se trocar, o próximo hóspede fica sem acesso.",
+          "Se a TV travar, tire da tomada por 30 segundos e ligue de novo."
+        ]},
+        {t:"h3", v:"Climatização"},
+        {t:"ul", v:[
+          "Há <strong>ar condicionado nos quartos e na sala</strong>.",
+          "Feche portas e janelas enquanto estiver ligado e desligue ao sair."
+        ]},
+        {t:"h3", v:"Lavanderia"},
+        {t:"ul", v:[
+          "A cobertura tem <strong>máquina de lavar</strong> e <strong>ferro de passar</strong>.",
+          "Traga seu sabão e amaciante."
+        ]}
+      ]
+    },
+    {
+      id:"piscina", titulo:"Piscina e varanda", icone:"i-piscina",
+      blocos:[
+        {t:"h2", v:"Piscina e área externa"},
+        {t:"foto", v:"02", alt:"Piscina da cobertura com espreguiçadeira"},
+        {t:"h3", v:"Piscina"},
+        {t:"p", v:"A piscina é privativa da cobertura e tem piscineiro próprio, que a mantém em condições de uso durante toda a sua estadia."},
+        {t:"atencao", v:"<strong>Não mexa nos registros</strong>A piscina tem registros e bombas para funcionar. Mexer neles sem o procedimento correto pode queimar a bomba, e o conserto é cobrado."},
+        {t:"h3", v:"Som da área externa"},
+        {t:"ul", v:[
+          "Ligue o botão <strong>Power</strong>. As luzes do amplificador de cima devem acender.",
+          "Aguarde <strong>3 minutos</strong> até o aparelho conectar no wifi.",
+          "Conecte o seu celular na rede <strong>APTO161-5G</strong>.",
+          "Abra o Spotify e mande tocar no dispositivo <strong>AAT Audiocast AC1</strong>."
+        ]},
+        {t:"h3", v:"Churrasqueira"},
+        {t:"p", v:"A área externa tem churrasqueira à disposição. <strong>O carvão não está incluído</strong>, então traga o seu. Apague bem as brasas ao terminar e deixe a grelha limpa."},
+        {t:"h3", v:"Geladeira externa"},
+        {t:"p", v:"Há uma segunda geladeira na área externa, pensada para cervejas e bebidas. A geladeira duplex com freezer fica na cozinha."},
+        {t:"h3", v:"Vento e vidros"},
+        {t:"atencao", v:"<strong>Feche os guarda sóis à noite</strong>O local venta muito. Guarda sol aberto durante uma ventania quebra os vidros da cobertura. Feche todos à noite e também ao final da estadia."},
+        {t:"ul", v:[
+          "Abra e feche as <strong>portas de vidro com cuidado</strong>: elas são sensíveis.",
+          "Recolha almofadas e objetos leves se o tempo virar."
+        ]}
+      ]
+    },
+    {
+      id:"predio", titulo:"O prédio", icone:"i-predio",
+      blocos:[
+        {t:"h2", v:"Serviços do prédio"},
+        {t:"h3", v:"Máquina de gelo"},
+        {t:"p", v:"O prédio tem máquina de gelo para consumo dos moradores e hóspedes, limitada a <strong>1 saco por dia por apartamento</strong>, enquanto houver disponibilidade."},
+        {t:"h3", v:"Serviço de praia"},
+        {t:"p", v:"A cobertura tem direito a <strong>8 cadeiras e 2 guarda sóis</strong> no serviço de praia do prédio. O quiosque fica em frente ao edifício e tem o logotipo do condomínio para você identificar."},
+        {t:"h3", v:"Lixo"},
+        {t:"ul", v:[
+          "Durante a estadia: leve todos os dias para a lixeira do edifício, no <strong>G1</strong>.",
+          "No fim da estadia: acomode em sacos plásticos e deixe nas lixeiras do <strong>subsolo e da garagem</strong>.",
+          "<strong>Nunca deixe lixo no corredor.</strong>"
+        ]},
+        {t:"h3", v:"Portaria"},
+        {t:"p", v:"Ramal 10 no interfone, 24 horas."}
+      ]
+    },
+    {
+      id:"fotos", titulo:"Fotos", icone:"i-camera",
+      blocos:[
+        {t:"h2", v:"Fotos"},
+        {t:"p", v:"Para você reconhecer os ambientes antes de chegar. São as mesmas fotos do anúncio."},
+        {t:"galeria"},
+        {t:"nota", v:"Toque em qualquer foto para ampliar."}
+      ]
+    },
+    {
+      id:"praias", titulo:"Praias", icone:"i-ondas",
+      blocos:[
+        {t:"h2", v:"Praias do Guarujá"},
+        {t:"p", v:"Você está na Enseada, com o serviço de praia do prédio logo em frente. Estas são as outras opções, todas a poucos minutos de carro."},
+        {t:"lugares", v:[
+          {n:"Praia da Enseada", d:"A praia da porta. A maior da cidade, com faixa de areia longa, quiosques e muita estrutura. O serviço de praia do prédio fica aqui."},
+          {n:"Praia de Pitangueiras", d:"Central e animada, cercada de comércio, hotéis e restaurantes. A mais prática para quem está sem carro."},
+          {n:"Praia das Astúrias", d:"Mais abrigada e tranquila que as vizinhas, com mar calmo. Boa opção com crianças."},
+          {n:"Praia do Tombo", d:"Mar aberto e ondas fortes, point de surf. Atenção à sinalização de banho."},
+          {n:"Praia da Guaiúba", d:"Pequena e cercada por morros, com clima de enseada reservada."},
+          {n:"Praia de Pernambuco", d:"Águas calmas e ambiente mais familiar, do lado oposto da cidade. Vale o deslocamento de carro."}
+        ]},
+        {t:"nota", v:"Confira a condição do mar e a bandeira dos salva vidas antes de entrar na água."}
+      ]
+    },
+    {
+      id:"comer", titulo:"Onde comer", icone:"i-garfo",
+      blocos:[
+        {t:"h2", v:"Onde comer"},
+        {t:"lugares", v:[
+          {n:"Tahiti Restaurante", d:"Uma das nossas indicações por aqui.", url:"https://share.google/DRTJJQ6XhWIrE76hN"},
+          {n:"Rufino&#39;s Restaurant o Chef dos Mares", d:"Casa de frutos do mar, boa para um almoço mais caprichado.", url:"https://share.google/xB650YI4b2kDVjY5K"},
+          {n:"Alcide&#39;s", d:"Clássico do Guarujá. Serve tanto para a refeição quanto para tomar alguma coisa.", url:"https://share.google/MnJoVyCI4qTJpRSRg"}
+        ]},
+        {t:"nota", v:"Sugestões por perto. Confirme o horário antes de ir, principalmente fora da temporada."}
+      ]
+    },
+    {
+      id:"beber", titulo:"Onde beber", icone:"i-taca",
+      blocos:[
+        {t:"h2", v:"Onde beber"},
+        {t:"lugares", v:[
+          {n:"Tepisco", d:"Indicação nossa para a noite.", url:"https://share.google/c9zVzewTUm2S5Q0ox"},
+          {n:"St. John&#39;s Beer Store &amp; Pub", d:"Pub com carta de cervejas, boa parada no fim do dia.", url:"https://share.google/skkTHLvFwT92H2Tqf"},
+          {n:"Alcide&#39;s", d:"Também funciona bem para a noite, não só para a refeição.", url:"https://share.google/MnJoVyCI4qTJpRSRg"}
+        ]},
+        {t:"nota", v:"Sugestões por perto. Confirme o horário antes de ir."}
+      ]
+    },
+    {
+      id:"fazer", titulo:"O que fazer", icone:"i-bussola",
+      blocos:[
+        {t:"h2", v:"O que fazer"},
+        {t:"lugares", v:[
+          {n:"Acqua Mundo", d:"Aquário na Enseada, bem perto da cobertura. Programa certo em dia de chuva ou com crianças."},
+          {n:"Forte dos Andradas", d:"Fortaleza militar com mirante e vista aberta para o mar. A visitação costuma exigir agendamento, confirme antes."},
+          {n:"Mirante do Morro do Maluf", d:"Vista do alto entre a Enseada e Pitangueiras. Melhor no fim da tarde."},
+          {n:"Passeio de escuna", d:"Saídas pelo litoral e pelas ilhas da região. Contrate na orla ou pelo píer."},
+          {n:"Centro histórico de Santos", d:"A uma travessia de balsa. Jardins da orla, bondinho e o museu do café."}
+        ]},
+        {t:"nota", v:"Confira horário e funcionamento antes de ir."}
+      ]
+    },
+    {
+      id:"compras", titulo:"Compras", icone:"i-sacola",
+      blocos:[
+        {t:"h2", v:"Compras e mercado"},
+        {t:"lugares", v:[
+          {n:"Pão de Açúcar", d:"Supermercado completo para abastecer a cozinha logo na chegada.", url:"https://share.google/95FnsGq9KG0BLFSk1"},
+          {n:"Farma Conde Loja 394", d:"A farmácia que indicamos por aqui.", url:"https://share.google/bCuivulj3qdjFYZeL"},
+          {n:"Outlet Premium Guarujá", d:"Na rodovia, no caminho de quem chega de São Paulo. Boa parada na ida ou na volta."}
+        ]},
+        {t:"nota", v:"Lembre de comprar produtos de higiene pessoal e detergente, que não são fornecidos. Em alta temporada, faça o mercado grande logo na chegada."}
+      ]
+    },
+    {
+      id:"chegar", titulo:"Como chegar", icone:"i-pino",
+      blocos:[
+        {t:"h2", v:"Como chegar"},
+        {t:"h3", v:"Endereço"},
+        {t:"p", v:"Rua Silvio Daige, 125, apartamento 161<br>Enseada, Guarujá SP<br>Edifício Golden Sea"},
+        {t:"lugares", v:[
+          {n:"Edifício Golden Sea", d:"Rua Silvio Daige, 125, Enseada, Guarujá SP.", url:"https://share.google/SF0oBVAiW5UlJTV9y"}
+        ]},
+        {t:"h3", v:"De carro, saindo de São Paulo"},
+        {t:"ul", v:[
+          "<strong>Pela rodovia, sem balsa:</strong> Imigrantes ou Anchieta até a Cônego Domênico Rangoni, que entra direto no Guarujá. É o caminho mais previsível em dia de movimento.",
+          "<strong>Pela balsa:</strong> desça para Santos e atravesse na balsa Santos para Guarujá. É mais curto no mapa, mas a fila pode passar de uma hora na véspera de feriado.",
+          "<strong>Pelo litoral norte:</strong> pela Rio Santos, sentido Bertioga."
+        ]},
+        {t:"h3", v:"Estacionamento"},
+        {t:"ul", v:[
+          "A unidade tem direito a <strong>3 vagas</strong> na garagem.",
+          "Informe modelo, cor e placa de cada carro antes da chegada.",
+          "Carro não informado fica na rua, por conta e risco do hóspede."
+        ]},
+        {t:"h3", v:"Sem carro"},
+        {t:"p", v:"Aplicativos de transporte funcionam bem na cidade. Em alta temporada, o tempo de espera aumenta bastante no fim da tarde."}
+      ]
+    },
+    {
+      id:"ateLogo", titulo:"Até logo", icone:"i-estrela",
+      blocos:[
+        {t:"h2", v:"Obrigado pela estadia"},
+        {t:"p", v:"Esperamos que a cobertura tenha sido do jeito que você imaginou."},
+        {t:"p", v:"Se gostou, algumas palavras na avaliação ajudam muito e orientam quem vem depois. Se algo não saiu bem, prefiro saber direto por mensagem para corrigir."},
+        {t:"nota", v:"Volte quando quiser. Hóspede que já ficou conosco tem prioridade nas datas de feriado."}
+      ]
+    }
+  ]
+};
+/* ====================== fim do conteúdo editável ====================== */
+
+const esc = s => String(s);
+const attr = s => String(s).replace(/"/g, "&quot;");
+const marcar = s => esc(s).replace(/\[\[(.+?)\]\]/g, '<span class="fill">$1</span>');
+const pendente = s => /\[\[/.test(String(s || ""));
+const semAcento = s => String(s).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+const mapa = termo => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(termo + ", " + GUIA.cidade);
+
+const telsHTML = `<div class="emerg"><span class="rotulo">Emergência</span><div class="linha-tels">
+  <a href="tel:190"><b>190</b> polícia</a><a href="tel:192"><b>192</b> SAMU</a><a href="tel:193"><b>193</b> bombeiros</a>
+</div></div>`;
+
+function blocoHTML(b){
+  switch(b.t){
+    case "h2": return `<h2>${marcar(b.v)}</h2>`;
+    case "h3": return `<h3>${marcar(b.v)}</h3>`;
+    case "p": return `<p>${marcar(b.v)}</p>`;
+    case "nota": return `<p class="nota">${marcar(b.v)}</p>`;
+    case "destaque": return `<div class="destaque">${marcar(b.v)}</div>`;
+    case "atencao": return `<div class="atencao">${marcar(b.v)}</div>`;
+    case "ul": return `<ul class="itens">${b.v.map(i => `<li>${marcar(i)}</li>`).join("")}</ul>`;
+    case "tels": return telsHTML;
+    case "dados": return `<div class="dados">${b.itens.map(it => {
+        const botao = (it.copiar && !pendente(it.v))
+          ? `<button class="copiar" type="button" data-valor="${attr(it.v)}">copiar</button>` : "";
+        return `<div class="par"><span class="k">${esc(it.k)}</span><span class="v">${marcar(it.v)}${botao}</span></div>`;
+      }).join("")}</div>`;
+    case "foto": return `<div class="cabecalho-foto"><img src="${esc(b.v)}.jpg" loading="lazy" alt="${attr(b.alt || "")}"></div>`;
+    case "galeria": return `<div class="galeria">${FOTOS.map((f, i) => `<button type="button" data-foto="${i}" aria-label="Ampliar: ${attr(f.l)}"><img src="${f.a}t.jpg" loading="lazy" alt="${attr(f.l)}"></button>`).join("")}</div>`;
+    case "lugares": return b.v.map(l => {
+        const link = pendente(l.n) ? ""
+          : `<a href="${l.url || mapa(l.busca || l.n)}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-mapa"/></svg>Ver no mapa</a>`;
+        return `<div class="lugar"><h4>${marcar(l.n)}</h4><p>${marcar(l.d)}</p>${link}</div>`;
+      }).join("");
+    case "botao": return pendente(b.href)
+        ? `<p>${marcar(b.href)}</p>`
+        : `<p><a class="botao" href="${esc(b.href)}" target="_blank" rel="noopener">${esc(b.v)}</a></p>`;
+    default: return "";
+  }
+}
+
+const textoPlano = s => s.blocos.map(b => {
+  if (Array.isArray(b.v)) return b.v.map(x => typeof x === "string" ? x : `${x.n} ${x.d}`).join(" ");
+  if (Array.isArray(b.itens)) return b.itens.map(x => `${x.k} ${x.v}`).join(" ");
+  if (b.t === "galeria") return FOTOS.map(f => f.l).join(" ");
+  if (b.t === "foto") return "";
+  return [b.v].filter(Boolean).join(" ");
+}).join(" ").replace(/<[^>]+>/g, " ");
+
+/* monta a grade do sumário */
+const grade = document.getElementById("grade");
+grade.innerHTML = GUIA.secoes.map(s =>
+  `<li data-busca="${attr(semAcento(s.titulo + " " + textoPlano(s)))}">
+     <a href="#${s.id}"><span class="bolha"><svg aria-hidden="true"><use href="#${s.icone}"/></svg></span>${esc(s.titulo)}</a>
+   </li>`).join("");
+
+/* monta as páginas */
+document.getElementById("paginas").innerHTML = GUIA.secoes.map((s, i) => {
+  const ant = GUIA.secoes[i-1], prox = GUIA.secoes[i+1];
+  return `<section class="pag" id="${s.id}">
+    <div class="barra"><a href="#sumario"><svg aria-hidden="true"><use href="#i-volta"/></svg>Sumário</a></div>
+    ${s.blocos.map(blocoHTML).join("")}
+    <nav class="navpe">
+      <a class="${ant?"":"off"}" href="#${ant?ant.id:""}">${ant?esc(ant.titulo):""}</a>
+      <a class="${prox?"":"off"}" href="#${prox?prox.id:""}">${prox?esc(prox.titulo):""}</a>
+    </nav>
+    <p class="rodape">Villa da Serra · Cobertura Golden Sea</p>
+  </section>`;
+}).join("");
+
+/* navegação por hash */
+const validos = new Set(["capa","sumario", ...GUIA.secoes.map(s => s.id)]);
+function mostrar(){
+  const alvo = validos.has(location.hash.slice(1)) ? location.hash.slice(1) : "capa";
+  document.querySelectorAll(".pag").forEach(p => p.classList.toggle("ativa", p.id === alvo));
+  window.scrollTo(0, 0);
+}
+window.addEventListener("hashchange", mostrar);
+mostrar();
+
+/* busca */
+const q = document.getElementById("q"), vazio = document.getElementById("vazio");
+q.addEventListener("input", () => {
+  const termo = semAcento(q.value.trim());
+  let achou = 0;
+  grade.querySelectorAll("li").forEach(li => {
+    const ok = !termo || li.dataset.busca.includes(termo);
+    li.style.display = ok ? "" : "none";
+    if (ok) achou++;
+  });
+  vazio.style.display = achou ? "none" : "block";
+});
+
+
+/* visualizador de fotos */
+const lb = document.getElementById("lb"), lbImg = document.getElementById("lbImg"), lbLeg = document.getElementById("lbLeg");
+let lbI = 0;
+function abrirFoto(i){
+  lbI = (i + FOTOS.length) % FOTOS.length;
+  const f = FOTOS[lbI];
+  lbImg.src = f.a + ".jpg";
+  lbImg.alt = f.l;
+  lbLeg.textContent = `${f.l} · ${lbI + 1} de ${FOTOS.length}`;
+  lb.classList.add("on");
+}
+function fecharFoto(){ lb.classList.remove("on"); lbImg.src = ""; }
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-foto]");
+  if (b) abrirFoto(Number(b.dataset.foto));
+});
+document.getElementById("lbFechar").addEventListener("click", fecharFoto);
+document.getElementById("lbAnt").addEventListener("click", () => abrirFoto(lbI - 1));
+document.getElementById("lbProx").addEventListener("click", () => abrirFoto(lbI + 1));
+lb.addEventListener("click", e => { if (e.target === lb) fecharFoto(); });
+document.addEventListener("keydown", e => {
+  if (!lb.classList.contains("on")) return;
+  if (e.key === "Escape") fecharFoto();
+  if (e.key === "ArrowLeft") abrirFoto(lbI - 1);
+  if (e.key === "ArrowRight") abrirFoto(lbI + 1);
+});
+
+/* copiar */
+document.addEventListener("click", async e => {
+  const b = e.target.closest(".copiar");
+  if (!b) return;
+  const antes = b.textContent;
+  try { await navigator.clipboard.writeText(b.dataset.valor || ""); b.textContent = "copiado"; }
+  catch { b.textContent = "copie acima"; }
+  setTimeout(() => b.textContent = antes, 2000);
+});
+</script>
+</body>
+</html>
