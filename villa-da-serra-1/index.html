@@ -548,7 +548,7 @@ const GUIA = {
           "<strong>Proibido fumar</strong> dentro da casa, inclusive vape e cigarro eletrônico.",
           "<strong>Festas e eventos não são permitidos.</strong>",
           "<strong>Silêncio total das 22h às 8h.</strong> Mesmo de dia, vale o bom senso: as casas são próximas e o som passa.",
-          "<strong>Pets:</strong> [[permitido ou não, e quantos]].",
+          "<strong>Pets:</strong> permitido 1 pet de pequeno porte.",
           "<strong>Proibido entrar na piscina com protetor solar ou bronzeador.</strong> O produto estraga a água e o filtro.",
           "Não é permitida fotografia ou filmagem comercial.",
           "Água, luz e internet são fornecidas por terceiros e podem ter quedas fora do nosso controle."
@@ -613,7 +613,9 @@ const GUIA = {
         {t:"h3", v:"Manutenção na casa"},
         {t:"p", v:"Lâmpada queimada, chuveiro, qualquer reparo: fale direto com o <strong>Fabio</strong>, nosso funcionário em Paraty.<br>WhatsApp <strong>+55 24 98125 6380</strong>, de <strong>8h às 17h</strong>."},
         {t:"h3", v:"Saúde"},
-        {t:"p", v:"[[hospital ou pronto socorro que você indica em Paraty]]"},
+        {t:"lugares", v:[
+          {n:"Pronto Socorro Hospital Municipal Hugo Miranda", d:"Pronto socorro de Paraty, a cerca de 5 km da casa. Em emergência com risco de vida, ligue 192 antes de sair."}
+        ]},
         {t:"nota", v:"Água, luz e internet são fornecidas por terceiros. Buscamos sempre a melhor solução, mas quedas na cidade fogem do nosso controle."}
       ]
     },
@@ -652,10 +654,13 @@ const GUIA = {
         ]},
         {t:"h3", v:"Lavanderia e banho"},
         {t:"ul", v:[
-          "Máquina de lavar: [[tem ou não]].",
-          "Ferro e varal: [[tem ou não, e onde ficam]].",
-          "Chuveiro com água quente."
+          "<strong>Não há máquina de lavar</strong> na casa.",
+          "Há <strong>ferro de passar e varal</strong> à disposição.",
+          "Chuveiro com água quente.",
+          "Lembre que a casa não fornece toalhas."
         ]},
+        {t:"h3", v:"Berço"},
+        {t:"p", v:"Temos berço disponível, <strong>sob pedido</strong>. Peça a montagem no <strong>dia da sua entrada</strong>, para já encontrar pronto."},
         {t:"atencao", v:"<strong>A casa é um sobrado</strong>A escada é aberta, com degraus vazados. Atenção com crianças pequenas e com pé molhado vindo da piscina."}
       ]
     },
@@ -675,7 +680,7 @@ const GUIA = {
         {t:"p", v:"A piscina é <strong>compartilhada entre as três casas</strong>, com espaço para crianças e para adultos."},
         {t:"atencao", v:"<strong>Nada de protetor solar ou bronzeador na água</strong>É proibido entrar na piscina com esses produtos. Eles estragam a água e entopem o filtro."},
         {t:"ul", v:[
-          "Horário de uso: [[horário da piscina]].",
+          "Horário de uso: <strong>das 8h às 22h</strong>.",
           "Não há salva vidas. Criança na água sempre com um adulto por perto.",
           "<strong>A luz da piscina</strong> acende nos botões da luminária embaixo do pergolado.",
           "<strong>Não mexa nos registros nem nas bombas.</strong> Fora do procedimento correto, a bomba queima e o conserto é cobrado.",
@@ -695,7 +700,7 @@ const GUIA = {
         {t:"ul", v:[
           "A casa é sobrado e a <strong>escada é aberta</strong>. É o ponto de atenção número um.",
           "O quarto com bicamas acomoda bem duas crianças.",
-          "Berço: [[tem ou não]].",
+          "<strong>Berço disponível sob pedido.</strong> Peça a montagem no dia da entrada.",
           "Crianças contam no limite de 6 pessoas."
         ]},
         {t:"h3", v:"Na piscina"},
@@ -775,7 +780,8 @@ const GUIA = {
         {t:"h2", v:"Compras e mercado"},
         {t:"lugares", v:[
           {n:"Super Carlão Supermercados Avenida", d:"Supermercado bem avaliado e relativamente perto, prático para abastecer a cozinha."},
-          {n:"[[farmácia que você indica]]", d:"[[distância e horário]]"}
+          {n:"Droga Raia", d:"No centro de Paraty, a cerca de 4 km da casa. Rede grande, fácil de achar."},
+          {n:"Farmácias perto da casa", d:"Busca ao vivo no mapa, para ver qual está aberta na hora. As mais próximas ficam entre 3 e 4 km, no centro.", url:"https://www.google.com/maps/search/farmacia/@-23.2231718,-44.7614638,14z"}
         ]},
         {t:"nota", v:"Faça o mercado grande na chegada. Em alta temporada e feriado a cidade lota e o centro fica difícil de acessar de carro."}
       ]
