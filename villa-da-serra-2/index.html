@@ -254,6 +254,16 @@ body{
   font-weight:700;
 }
 .pag p{margin:0 0 13px}
+a.zap{
+  display:inline-flex;align-items:center;gap:6px;vertical-align:-3px;
+  background:var(--mar-claro);color:var(--mar);
+  border:1px solid #C7DBE2;border-radius:999px;
+  padding:4px 12px 4px 10px;margin:1px 0;
+  font-family:var(--texto);font-size:14px;font-weight:700;
+  text-decoration:none;white-space:nowrap;
+}
+a.zap:hover{background:#CFE1E6}
+a.zap svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
 .pag ul.itens{list-style:none;margin:0 0 13px;padding:0}
 .pag ul.itens li{
   padding:11px 0 11px 17px;
@@ -387,6 +397,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 <symbol id="i-escudo" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.2C19.5 16.5 16 20 12 21.5 8 20 4.5 16.5 4.5 11.2V6z"/><path d="M9.3 12.2l1.9 1.9 3.5-3.6"/></symbol>
 <symbol id="i-casa" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9.5" cy="9.3" r="1.7"/><circle cx="14.5" cy="9.3" r="1.7"/><path d="M7.5 15.3h9"/></symbol>
 <symbol id="i-piscina" viewBox="0 0 24 24"><path d="M2.5 15.5c2.2-1.8 4 1.8 6.2 0s4-1.8 6.2 0 3.6 1.8 5.3 0"/><path d="M2.5 20c2.2-1.8 4 1.8 6.2 0s4-1.8 6.2 0 3.6 1.8 5.3 0"/><path d="M8 13.5V6a2.2 2.2 0 0 1 4.4 0M16 13.5V6a2.2 2.2 0 0 1 4.4 0"/><path d="M8 9.8h4.4"/></symbol>
+<symbol id="i-zap" viewBox="0 0 24 24"><path d="M20.5 11.6a8 8 0 0 1-8 8 8.4 8.4 0 0 1-3.7-.85L4 20l1.5-4.2a7.8 7.8 0 0 1-1-3.85 8 8 0 0 1 8-8.05 8 8 0 0 1 8 7.7z"/><path d="M8.9 11.9h.01M12.3 11.9h.01M15.7 11.9h.01"/></symbol>
 <symbol id="i-predio" viewBox="0 0 24 24"><path d="M4 20.5V5.2A1.7 1.7 0 0 1 5.7 3.5h7A1.7 1.7 0 0 1 14.4 5.2v15.3"/><path d="M14.4 20.5V10.5h3.9A1.7 1.7 0 0 1 20 12.2v8.3"/><path d="M7.4 7h3.6M7.4 11h3.6M7.4 15h3.6"/><path d="M2.5 20.5h19"/></symbol>
 <symbol id="i-camera" viewBox="0 0 24 24"><path d="M3.5 8.5h3.2L8.2 6h7.6l1.5 2.5h3.2V19H3.5z"/><circle cx="12" cy="13.3" r="3.4"/></symbol>
 <symbol id="i-ondas" viewBox="0 0 24 24"><path d="M2.5 8.5c2.4-2 4.3 2 6.8 0s4.3-2 6.8 0 4 2 5.4 0"/><path d="M2.5 13.5c2.4-2 4.3 2 6.8 0s4.3-2 6.8 0 4 2 5.4 0"/><path d="M2.5 18.5c2.4-2 4.3 2 6.8 0s4.3-2 6.8 0 4 2 5.4 0"/></symbol>
@@ -621,11 +632,11 @@ const GUIA = {
       blocos:[
         {t:"h2", v:"Contatos"},
         {t:"h3", v:"Villa da Serra"},
-        {t:"p", v:"WhatsApp <strong>+55 11 99432 9460</strong><br>Respondemos normalmente em até uma hora."},
+        {t:"p", v:"WhatsApp <a class='zap' href='https://wa.me/5511994329460' target='_blank' rel='noopener'><svg aria-hidden='true'><use href='#i-zap'/></svg>+55 11 99432 9460</a><br>Respondemos normalmente em até uma hora."},
         {t:"h3", v:"Emergência"},
         {t:"tels"},
         {t:"h3", v:"Manutenção na casa"},
-        {t:"p", v:"Lâmpada queimada, chuveiro, troca de gás, qualquer reparo: fale direto com o <strong>Fabio</strong>, nosso funcionário em Paraty.<br>WhatsApp <strong>+55 24 98125 6380</strong>, de <strong>9h às 20h</strong>."},
+        {t:"p", v:"Lâmpada queimada, chuveiro, troca de gás, qualquer reparo: fale direto com o <strong>Fabio</strong>, nosso funcionário em Paraty.<br>WhatsApp <a class='zap' href='https://wa.me/5524981256380' target='_blank' rel='noopener'><svg aria-hidden='true'><use href='#i-zap'/></svg>+55 24 98125 6380</a>, de <strong>9h às 20h</strong>."},
         {t:"h3", v:"Saúde"},
         {t:"lugares", v:[
           {n:"Pronto Socorro Hospital Municipal Hugo Miranda", d:"Pronto socorro de Paraty, a cerca de 5 km da casa. Em emergência com risco de vida, ligue 192 antes de sair."}
@@ -652,7 +663,7 @@ const GUIA = {
           "<strong>Micro ondas:</strong> nada de metal nem papel alumínio.",
           "Traga seu detergente e material de limpeza básica."
         ]},
-        {t:"destaque", v:"<strong>Se o gás acabar</strong>Chame a manutenção no WhatsApp, das 9h às 20h, e trocamos o botijão. Fora desse horário você pode comprar e trocar por conta própria, guardar o comprovante e nós ressarcimos, ou simplesmente esperar o atendimento abrir."},
+        {t:"destaque", v:"<strong>Se o gás acabar</strong>Chame a manutenção no WhatsApp <a class='zap' href='https://wa.me/5524981256380' target='_blank' rel='noopener'><svg aria-hidden='true'><use href='#i-zap'/></svg>+55 24 98125 6380</a>, das 9h às 20h, e trocamos o botijão. Fora desse horário você pode comprar e trocar por conta própria, guardar o comprovante e nós ressarcimos, ou simplesmente esperar o atendimento abrir."},
         {t:"atencao", v:"<strong>Atenção com a voltagem</strong>A maioria das tomadas é 110V, mas a geladeira, o fogão, o forno elétrico e o micro ondas são <strong>220V</strong> e já estão ligados nas tomadas certas. Não troque esses aparelhos de tomada."},
         {t:"h3", v:"Climatização"},
         {t:"ul", v:[
@@ -688,6 +699,7 @@ const GUIA = {
         {t:"ul", v:[
           "<strong>Nada de protetor solar ou bronzeador na água.</strong> Os produtos estragam a água e entopem o filtro.",
           "<strong>Horário de uso: das 8h às 22h</strong>, por causa do horário de silêncio.",
+          "<strong>A luz da piscina é automática.</strong> Acende e apaga sozinha, não precisa procurar interruptor.",
           "Criança na água sempre com um adulto por perto.",
           "Leve a sua toalha de praia. A toalha de banho da casa não vai para a piscina."
         ]},
