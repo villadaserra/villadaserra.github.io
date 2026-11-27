@@ -274,7 +274,7 @@ body{
   font-size:14.5px;
   margin:0 0 15px;
 }
-.destaque strong{display:block;margin-bottom:3px}
+.destaque > strong:first-child{display:block;margin-bottom:3px}
 .atencao{
   background:var(--alerta-fundo);
   border-radius:var(--raio);
@@ -283,7 +283,7 @@ body{
   margin:0 0 15px;
   color:#5C2321;
 }
-.atencao strong{display:block;margin-bottom:3px;color:var(--alerta-tinta)}
+.atencao > strong:first-child{display:block;margin-bottom:3px;color:var(--alerta-tinta)}
 .nota{font-size:12.5px;color:var(--suave);margin-top:16px}
 
 .fill{
@@ -510,7 +510,7 @@ const GUIA = {
       blocos:[
         {t:"h2", v:"Entrada e saída"},
         {t:"h3", v:"Chegada"},
-        {t:"p", v:"A entrada é a partir das [[horário de entrada]]. O acesso é autônomo, pela <strong>fechadura de senha digital</strong> da porta."},
+        {t:"p", v:"A entrada é a partir das <strong>15h</strong>. O acesso é autônomo, pela <strong>fechadura de senha digital</strong> da porta."},
         {t:"destaque", v:"<strong>A senha da fechadura vai por mensagem</strong>Enviamos junto com as instruções de acesso pouco antes da sua chegada."},
         {t:"ul", v:[
           "A casa é a <strong>Villa da Serra I</strong>, a primeira do conjunto de três.",
@@ -519,16 +519,19 @@ const GUIA = {
         ]},
         {t:"h3", v:"Durante a estadia"},
         {t:"ul", v:[
-          "Leve o lixo para a lixeira todos os dias, já separado.",
+          "Leve o lixo <strong>todos os dias</strong> para o cesto que fica <strong>na garagem</strong>.",
           "Deixe louças e panelas na pia sem restos de comida.",
           "Não é preciso limpar a casa no dia a dia."
         ]},
         {t:"h3", v:"Saída"},
-        {t:"p", v:"A saída é até as [[horário de saída]]. Antes de ir embora:"},
+        {t:"p", v:"A saída é até as <strong>11h</strong>."},
+        {t:"destaque", v:"<strong>Você não precisa limpar a casa antes de sair</strong>A limpeza é por nossa conta. Só pedimos que o lixo não fique acumulado."},
+        {t:"p", v:"Antes de ir embora:"},
         {t:"ul", v:[
-          "Leve o lixo para a lixeira.",
+          "Junte o lixo em sacos plásticos e deixe nas <strong>lixeiras na frente do imóvel</strong>.",
           "Deixe a louça lavada.",
           "Apague bem as brasas da churrasqueira, se tiver usado.",
+          "<strong>Feche o guarda sol.</strong> O local venta muito e guarda sol aberto quebra vidro.",
           "Feche as janelas, desligue o ar condicionado e as luzes.",
           "Confira os dois quartos, o banheiro e a área de churrasco antes de fechar a porta."
         ]}
@@ -544,19 +547,24 @@ const GUIA = {
           "<strong>Visitantes</strong> só com aviso antes.",
           "<strong>Proibido fumar</strong> dentro da casa, inclusive vape e cigarro eletrônico.",
           "<strong>Festas e eventos não são permitidos.</strong>",
-          "<strong>Silêncio das 22h às 8h.</strong> As casas são próximas e o som passa.",
+          "<strong>Silêncio total das 22h às 8h.</strong> Mesmo de dia, vale o bom senso: as casas são próximas e o som passa.",
           "<strong>Pets:</strong> [[permitido ou não, e quantos]].",
+          "<strong>Proibido entrar na piscina com protetor solar ou bronzeador.</strong> O produto estraga a água e o filtro.",
           "Não é permitida fotografia ou filmagem comercial.",
           "Água, luz e internet são fornecidas por terceiros e podem ter quedas fora do nosso controle."
         ]},
         {t:"h3", v:"Enxoval e limpeza"},
+        {t:"atencao", v:"<strong>Não fornecemos toalhas</strong>Nenhuma, nem de banho nem de praia. Traga as suas."},
         {t:"ul", v:[
-          "Fornecemos <strong>1 jogo de roupa de cama e banho por hóspede</strong>, sem troca durante a estadia.",
-          "A troca só acontece com uma limpeza extra contratada, por [[valor da limpeza extra]], agendada com antecedência.",
-          "<strong>Não fornecemos toalha de praia.</strong>",
-          "Traga seus produtos de higiene pessoal e de limpeza básica, como detergente.",
-          "Traga carvão, se for usar a churrasqueira."
+          "Fornecemos <strong>roupa de cama, travesseiros, lençóis e uma coberta para cada leito contratado</strong>.",
+          "<strong>Não há troca de enxoval durante a estadia.</strong> A troca só acontece com uma limpeza extra contratada, por <strong>R$ 200,00 por hospedagem</strong>, agendada com antecedência.",
+          "<strong>Não fornecemos carvão</strong> para a churrasqueira.",
+          "Traga também seus produtos de higiene pessoal e de limpeza básica."
         ]},
+        {t:"h3", v:"Danos"},
+        {t:"p", v:"Você não precisa limpar antes de sair, mas <strong>manchas, danos ao imóvel e danos ao enxoval podem ser cobrados</strong> depois da saída."},
+        {t:"h3", v:"Manutenção"},
+        {t:"p", v:"A casa está completa e funcionando, mas é uma residência: uma lâmpada pode queimar ou um chuveiro apresentar defeito. Temos um funcionário em horário comercial para isso, veja em Contatos."},
         {t:"h3", v:"Segurança"},
         {t:"ul", v:[
           "Há <strong>câmeras de segurança nas áreas externas</strong>: em frente à garagem, do outro lado da rua e na entrada da Villa. Nenhuma dentro das casas.",
@@ -579,15 +587,17 @@ const GUIA = {
         {t:"p", v:"Uma vaga por casa, para carro pequeno ou médio. Carro grande estaciona na rua, de graça."},
         {t:"h3", v:"O que preciso levar?"},
         {t:"ul", v:[
+          "<strong>Toalhas.</strong> Não fornecemos nenhuma, nem de banho.",
+          "<strong>Carvão</strong> para a churrasqueira.",
           "Produtos de higiene pessoal.",
-          "Detergente e material de limpeza básica.",
-          "Toalha de praia, porque só fornecemos as de banho.",
-          "Carvão para a churrasqueira."
+          "Detergente e material de limpeza básica."
         ]},
+        {t:"h3", v:"Tem toalha na casa?"},
+        {t:"p", v:"Não. Fornecemos roupa de cama, travesseiros, lençóis e uma coberta por leito, mas nenhuma toalha. Essa é a lembrança que mais esquecem."},
         {t:"h3", v:"Dá para alugar as três casas juntas?"},
         {t:"p", v:"Dá. São 3 sobrados, 6 pessoas em cada, até 18 no total. Consulte a disponibilidade com antecedência."},
         {t:"h3", v:"Tem troca de roupa de cama?"},
-        {t:"p", v:"Não durante a estadia. A troca só acontece com uma limpeza extra contratada e agendada antes."},
+        {t:"p", v:"Não durante a estadia. A troca só acontece com uma limpeza extra contratada por R$ 200,00 e agendada antes."},
         {t:"h3", v:"Preciso limpar antes de sair?"},
         {t:"p", v:"Não. Só leve o lixo e deixe a louça lavada."}
       ]
@@ -600,9 +610,11 @@ const GUIA = {
         {t:"p", v:"WhatsApp <strong>+55 11 99432 9460</strong><br>Respondemos normalmente em até uma hora."},
         {t:"h3", v:"Emergência"},
         {t:"tels"},
+        {t:"h3", v:"Manutenção na casa"},
+        {t:"p", v:"Lâmpada queimada, chuveiro, qualquer reparo: fale direto com o <strong>Fabio</strong>, nosso funcionário em Paraty.<br>WhatsApp <strong>+55 24 98125 6380</strong>, de <strong>8h às 17h</strong>."},
         {t:"h3", v:"Saúde"},
         {t:"p", v:"[[hospital ou pronto socorro que você indica em Paraty]]"},
-        {t:"nota", v:"Problema com luz, água ou a fechadura: chame no WhatsApp. Resolvemos o mais rápido possível."}
+        {t:"nota", v:"Água, luz e internet são fornecidas por terceiros. Buscamos sempre a melhor solução, mas quedas na cidade fogem do nosso controle."}
       ]
     },
     {
@@ -612,9 +624,10 @@ const GUIA = {
         {t:"foto", v:"01", alt:"Sala e cozinha da Villa da Serra I"},
         {t:"h3", v:"Wifi"},
         {t:"dados", itens:[
-          {k:"Rede", v:"[[nome da rede]]", copiar:false},
-          {k:"Senha", v:"[[senha do wifi]]", copiar:true}
+          {k:"Rede", v:"Villa da Serra", copiar:false},
+          {k:"Senha", v:"Villa@2023", copiar:true}
         ]},
+        {t:"destaque", v:"<strong>Se o wifi cair</strong>Desligue a chave geral, no poste em frente à casa, conte 10 segundos e ligue de novo. Resolve na maioria das vezes."},
         {t:"h3", v:"Cozinha"},
         {t:"ul", v:[
           "<strong>Cozinha completa</strong>, com fogão em ilha, forno elétrico, micro ondas e geladeira com freezer.",
@@ -623,6 +636,7 @@ const GUIA = {
           "<strong>Micro ondas:</strong> nada de metal nem papel alumínio.",
           "Traga seu detergente e material de limpeza básica."
         ]},
+        {t:"atencao", v:"<strong>Atenção com a voltagem</strong>A maioria das tomadas é 110V, mas a geladeira, o fogão, o forno elétrico e o micro ondas são <strong>220V</strong> e já estão ligados nas tomadas certas. Não troque esses aparelhos de tomada."},
         {t:"h3", v:"Climatização"},
         {t:"ul", v:[
           "Há <strong>ar condicionado nos dois quartos</strong>. Use o controle de cada ambiente.",
@@ -631,8 +645,9 @@ const GUIA = {
         ]},
         {t:"h3", v:"TV e trabalho"},
         {t:"ul", v:[
-          "A TV da sala tem [[quais aplicativos estão configurados]].",
-          "Não altere o usuário nem a senha das contas.",
+          "A TV tem <strong>antena com todos os canais abertos via satélite</strong>.",
+          "Os aplicativos de streaming estão instalados, mas <strong>sem conta</strong>: entre com o seu próprio usuário e senha.",
+          "Lembre de sair das suas contas antes de ir embora.",
           "Há um <strong>espaço de trabalho</strong> no andar de cima, com mesa e cadeira."
         ]},
         {t:"h3", v:"Lavanderia e banho"},
@@ -658,13 +673,17 @@ const GUIA = {
         ]},
         {t:"h3", v:"Piscina"},
         {t:"p", v:"A piscina é <strong>compartilhada entre as três casas</strong>, com espaço para crianças e para adultos."},
+        {t:"atencao", v:"<strong>Nada de protetor solar ou bronzeador na água</strong>É proibido entrar na piscina com esses produtos. Eles estragam a água e entopem o filtro."},
         {t:"ul", v:[
           "Horário de uso: [[horário da piscina]].",
           "Não há salva vidas. Criança na água sempre com um adulto por perto.",
-          "Leve a sua toalha. As de banho da casa não vão para a piscina."
+          "<strong>A luz da piscina</strong> acende nos botões da luminária embaixo do pergolado.",
+          "<strong>Não mexa nos registros nem nas bombas.</strong> Fora do procedimento correto, a bomba queima e o conserto é cobrado.",
+          "Leve a sua toalha. Lembrando que a casa não fornece nenhuma."
         ]},
         {t:"h3", v:"Área comum"},
         {t:"p", v:"Junto da piscina há mesa com 4 cadeiras, ombrelone, duas poltronas sob um pergolado e um balanço. Tudo em fibra sintética e alumínio."},
+        {t:"atencao", v:"<strong>Feche o guarda sol à noite</strong>O local venta muito. Guarda sol aberto durante uma ventania quebra vidro. Feche à noite e também ao final da estadia."},
         {t:"nota", v:"Como o espaço é dividido com as outras duas casas, vale combinar os horários de uso em dia cheio."}
       ]
     },
@@ -766,7 +785,12 @@ const GUIA = {
       blocos:[
         {t:"h2", v:"Como chegar"},
         {t:"h3", v:"Endereço"},
-        {t:"p", v:"[[endereço completo da Villa da Serra]]<br>Paraty, Rio de Janeiro."},
+        {t:"p", v:"Villa da Serra, Paraty, Rio de Janeiro."},
+        {t:"lugares", v:[
+          {n:"Villa da Serra Paraty", d:"Abre direto no Google Maps, com a rota até a porta.", url:"https://www.google.com/maps/search/?api=1&query=Villa+da+Serra+Paraty"}
+        ]},
+        {t:"p", v:"Prefere Waze? <a href=\"https://waze.com/ul/h75b5vkmen\" target=\"_blank\" rel=\"noopener\">abrir a rota no Waze</a>."},
+        {t:"atencao", v:"<strong>Na descida da serra não tem sinal de celular</strong>Deixe a rota ligada antes de começar a descer. Mesmo sem sinal o Google Maps leva até a porta. Se você desligar a rota, sem sinal ele não consegue recalcular."},
         {t:"h3", v:"De carro"},
         {t:"ul", v:[
           "<strong>De São Paulo:</strong> Ayrton Senna ou Dutra até Taubaté, depois a Rodovia Oswaldo Cruz descendo a serra até Ubatuba, e a Rio Santos sentido Paraty.",
