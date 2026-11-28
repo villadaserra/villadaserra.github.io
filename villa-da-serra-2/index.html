@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Karla:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
 <style>
 /* Coluna única no formato de celular, mar e areia do Guarujá, serifa só nos títulos */
 :root{
@@ -29,6 +29,7 @@
   --preencher-tinta:#8F5A12;
   --alerta-fundo:#FAE8E8;
   --alerta-tinta:#95332F;
+  --verde-marca:#17713C; --ouro-marca:#D9A441;
   --display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
   --texto:"Karla","Helvetica Neue",Arial,sans-serif;
   --raio:14px;
@@ -66,8 +67,14 @@ body{
     overflow:hidden;
   }
 }
-.pag{display:none;padding:0 22px 44px}
+.pag{display:none;padding:0 22px 44px;position:relative;overflow:hidden}
 .pag.ativa{display:block}
+.pag > *{position:relative;z-index:1}
+.pag::before,.pag::after{content:"";position:absolute;z-index:0;pointer-events:none;
+  background-repeat:no-repeat;background-position:center;background-size:contain}
+.pag::before{top:-34px;right:-84px;width:272px;height:245px;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20200%20180%27%20fill%3D%27none%27%20stroke%3D%27%23E3E1DA%27%20stroke-width%3D%273%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M18%2086%20L100%2019%20L182%2086%27%2F%3E%3Cpath%20d%3D%27M34%2084%20V164%20H166%20V84%27%2F%3E%3Cpath%20d%3D%27M86%20164%20V118%20H114%20V164%27%2F%3E%3Crect%20x%3D%2754%27%20y%3D%27104%27%20width%3D%2725%27%20height%3D%2725%27%20rx%3D%272%27%2F%3E%3Crect%20x%3D%27121%27%20y%3D%27104%27%20width%3D%2725%27%20height%3D%2725%27%20rx%3D%272%27%2F%3E%3Cpath%20d%3D%27M148%2050%20V31%20H160%20V60%27%2F%3E%3Cpath%20d%3D%27M8%20164%20H192%27%2F%3E%3C%2Fsvg%3E");opacity:1}
+.pag::after{bottom:14px;left:-46px;width:150px;height:135px;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20200%20180%27%20fill%3D%27none%27%20stroke%3D%27%23E8E6E0%27%20stroke-width%3D%273%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M18%2086%20L100%2019%20L182%2086%27%2F%3E%3Cpath%20d%3D%27M34%2084%20V164%20H166%20V84%27%2F%3E%3Cpath%20d%3D%27M86%20164%20V118%20H114%20V164%27%2F%3E%3Crect%20x%3D%2754%27%20y%3D%27104%27%20width%3D%2725%27%20height%3D%2725%27%20rx%3D%272%27%2F%3E%3Crect%20x%3D%27121%27%20y%3D%27104%27%20width%3D%2725%27%20height%3D%2725%27%20rx%3D%272%27%2F%3E%3Cpath%20d%3D%27M148%2050%20V31%20H160%20V60%27%2F%3E%3Cpath%20d%3D%27M8%20164%20H192%27%2F%3E%3C%2Fsvg%3E");opacity:1}
+@media (max-width:360px){.pag::before{right:-86px}.pag::after{display:none}}
 
 /* ---------- capa ---------- */
 #capa{padding:26px 22px 40px;text-align:center}
@@ -266,16 +273,16 @@ a.zap:hover{background:#CFE1E6}
 a.zap svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
 .pag ul.itens{list-style:none;margin:0 0 13px;padding:0}
 .pag ul.itens li{
-  padding:11px 0 11px 17px;
+  padding:11px 0 11px 27px;
   border-bottom:1px solid var(--linha);
   position:relative;
   font-size:15px;
 }
 .pag ul.itens li:last-child{border-bottom:0}
 .pag ul.itens li::before{
-  content:"";position:absolute;left:0;top:19px;
-  width:6px;height:6px;border-radius:50%;background:var(--mar-claro);
-  box-shadow:inset 0 0 0 1.5px var(--mar);
+  content:"";position:absolute;left:0;top:14px;
+  width:16px;height:16px;
+  background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2016%2016%27%20fill%3D%27none%27%20stroke%3D%27%2313596E%27%20stroke-width%3D%272.1%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M2.6%208.6%20L6.2%2012.2%20L13.4%203.9%27%2F%3E%3C%2Fsvg%3E") no-repeat center/contain;
 }
 .destaque{
   background:var(--mar-claro);
@@ -358,17 +365,37 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 
 /* ---------- capa com foto ---------- */
 #capa{padding:0}
-.hero{position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;background:#0E3A48}
-.hero img{width:100%;height:100%;object-fit:cover;object-position:center 68%;display:block}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,28,36,0) 34%,rgba(8,28,36,.45) 62%,rgba(8,28,36,.86) 100%)}
-.hero-texto{position:absolute;left:0;right:0;bottom:30px;z-index:2;text-align:center;padding:0 22px}
-.hero-texto .capa-titulo{color:#fff;margin:0}
-.hero-texto .capa-sub{color:#CFE4EA}
-.capa-rodape{text-align:center;padding:26px 22px 42px}
+#capa{padding:16px 16px 0}
+#capa::before,#capa::after{display:none}
+.hero{position:relative;width:100%;aspect-ratio:4/4.6;overflow:hidden;background:#0E3A48;border-radius:4px}
+.hero img{width:100%;height:100%;object-fit:cover;object-position:center 60%;display:block}
+.hero::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(10,26,20,.34) 0%,rgba(10,26,20,0) 40%)}
+.hero-marca{position:absolute;top:17px;left:17px;width:124px;z-index:3}
+.hero-marca img{width:100%;display:block;filter:drop-shadow(0 1px 6px rgba(0,0,0,.38))}
+.capa-rodape{text-align:center;padding:30px 12px 34px}
+.capa-script{font-family:"Parisienne",cursive;font-size:34px;color:var(--verde-marca);line-height:1}
+.capa-titulo{
+  font-family:var(--display);font-weight:600;font-size:35px;letter-spacing:.07em;
+  line-height:1.02;margin:1px 0 0;text-transform:uppercase;text-wrap:balance;color:var(--tinta);
+}
+.capa-fios{display:flex;align-items:center;gap:10px;margin:16px 26px 14px}
+.capa-fios span{flex:1;height:1px;background:rgba(22,39,47,.22)}
+.capa-fios i{width:5px;height:5px;background:var(--ouro-marca);transform:rotate(45deg)}
+.capa-nome{font-family:var(--display);font-size:26px;font-weight:500;letter-spacing:.01em;text-transform:none}
+.capa-local{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--suave);margin-top:7px}
+.capa-rodape .botao{margin-top:24px}
+.capa-end{font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--suave);margin-top:15px}
 
 /* ---------- foto de abertura de seção ---------- */
 .cabecalho-foto{margin:0 0 18px;border-radius:var(--raio);overflow:hidden;aspect-ratio:16/10;background:var(--mar-claro)}
 .cabecalho-foto img{width:100%;height:100%;object-fit:cover;display:block}
+figure.cena{margin:0 0 18px}
+figure.cena .moldura{border-radius:var(--raio);overflow:hidden;aspect-ratio:16/10;background:var(--mar-claro)}
+figure.cena img{width:100%;height:100%;object-fit:cover;display:block}
+figure.cena figcaption{font-size:11px;color:var(--suave);margin-top:6px;line-height:1.45}
+figure.cena figcaption b{font-weight:600;color:var(--tinta)}
+figure.cena figcaption span{opacity:.8}
 
 /* ---------- galeria ---------- */
 .galeria{display:grid;grid-template-columns:1fr 1fr;gap:8px}
@@ -422,15 +449,16 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
   <section class="pag ativa" id="capa">
     <div class="hero">
       <img src="capa.jpg" alt="Piscina de vidro aquecida com vista para a serra">
-      <div class="hero-texto">
-        <h1 class="capa-titulo">Bem vindo</h1>
-        <div class="capa-sub">guia do hóspede</div>
-      </div>
+      <div class="hero-marca"><img src="../logo-claro.png" alt="Villa da Serra"></div>
     </div>
     <div class="capa-rodape">
+      <div class="capa-script">Guia de</div>
+      <h1 class="capa-titulo">Boas vindas</h1>
+      <div class="capa-fios"><span></span><i></i><span></span></div>
       <div class="capa-nome">Villa da Serra 2</div>
-      <div class="capa-local">Paraty, Rio de Janeiro</div>
+      <div class="capa-local">Paraty · Rio de Janeiro</div>
       <a class="botao" href="#sumario">Abrir o guia</a>
+      <div class="capa-end">Rua São Cosme e Damião · Paraty · RJ</div>
     </div>
   </section>
 
@@ -633,23 +661,6 @@ const GUIA = {
       ]
     },
     {
-      id:"contatos", titulo:"Contatos", icone:"i-fone",
-      blocos:[
-        {t:"h2", v:"Fale com a gente"},
-        {t:"h3", v:"Villa da Serra"},
-        {t:"p", v:"Qualquer dúvida, pedido ou imprevisto, chame no WhatsApp <a class='zap' href='https://wa.me/5511994329460' target='_blank' rel='noopener'><svg aria-hidden='true'><use href='#i-zap'/></svg>+55 11 99432 9460</a><br>Respondemos normalmente em até uma hora."},
-        {t:"h3", v:"Emergência"},
-        {t:"tels"},
-        {t:"h3", v:"Manutenção na casa"},
-        {t:"p", v:"Lâmpada queimada, chuveiro, troca de gás, qualquer reparo: fale direto com o <strong>Fabio</strong>, nosso funcionário em Paraty. Ele resolve rápido e com o maior cuidado.<br>WhatsApp <a class='zap' href='https://wa.me/5524981256380' target='_blank' rel='noopener'><svg aria-hidden='true'><use href='#i-zap'/></svg>+55 24 98125 6380</a>, de <strong>9h às 20h</strong>."},
-        {t:"h3", v:"Saúde"},
-        {t:"lugares", v:[
-          {n:"Pronto Socorro Hospital Municipal Hugo Miranda", d:"Pronto socorro de Paraty, a cerca de 5 km da casa. Em emergência com risco de vida, ligue 192 antes de sair."}
-        ]},
-        {t:"nota", v:"Água, luz e internet são fornecidas por terceiros. Buscamos sempre a melhor solução, mas quedas na cidade fogem do nosso controle."}
-      ]
-    },
-    {
       id:"casa", titulo:"A casa", icone:"i-casa",
       blocos:[
         {t:"h2", v:"Como usar a casa"},
@@ -744,22 +755,20 @@ const GUIA = {
       ]
     },
     {
-      id:"comer", titulo:"Onde comer", icone:"i-garfo",
+      id:"comer", titulo:"Comer e beber", icone:"i-garfo",
       blocos:[
-        {t:"h2", v:"Onde comer"},
+        {t:"h2", v:"Onde comer e beber"},
+        {t:"h3", v:"Para comer"},
+        {t:"cena", v:"../paraty/centro-dia.jpg", leg:"Centro histórico de Paraty", alt:"Rua do centro histórico de Paraty", cred:"Marinelson Almeida", lic:"CC BY 2.0"},
         {t:"p", v:"Nossas indicações de quem conhece a cidade."},
         {t:"lugares", v:[
           {n:"Restaurante Arte e Sabor", d:"Um dos mais bem avaliados da cidade, no centro histórico."},
           {n:"Maria Beijinho", d:"Café com boa nota, ótimo para uma pausa doce durante o passeio."},
           {n:"Restaurante Poço do Tarzan", d:"Junto a um poço natural, na estrada Paraty Cunha. Parada perfeita em dia de cachoeira."}
         ]},
-        {t:"nota", v:"O centro histórico fica a cerca de 15 minutos de carro. Confirme o horário antes de ir, principalmente fora da temporada."}
-      ]
-    },
-    {
-      id:"beber", titulo:"Onde beber", icone:"i-taca",
-      blocos:[
-        {t:"h2", v:"Onde beber"},
+        {t:"nota", v:"O centro histórico fica a cerca de 15 minutos de carro. Confirme o horário antes de ir, principalmente fora da temporada."},
+        {t:"h3", v:"Para beber"},
+        {t:"cena", v:"../paraty/centro-noite.jpg", leg:"As ruas de pedra do centro", alt:"Casario colonial do centro histórico de Paraty", cred:"Marinelson Almeida", lic:"CC BY 2.0"},
         {t:"p", v:"Paraty é terra de cachaça, e a noite no centro histórico é um programa à parte."},
         {t:"lugares", v:[
           {n:"Cana da Praça", d:"Cachaçaria e boteco no coração do centro histórico, com mesas na rua de pedra e dezenas de rótulos artesanais de Paraty. O melhor lugar para começar a noite."},
@@ -767,6 +776,38 @@ const GUIA = {
           {n:"Alambique Paratiana", d:"Alambique vizinho da Villa, um dos passeios mais próximos daqui. Visita e degustação."}
         ]},
         {t:"nota", v:"Vale conhecer um alambique de dia e deixar a noite para o centro histórico."}
+      ]
+    },
+    {
+      id:"praias", titulo:"Praias", icone:"i-ondas",
+      blocos:[
+        {t:"h2", v:"Praias de Paraty"},
+        {t:"cena", v:"../paraty/trindade.jpg", leg:"Trindade", alt:"Praia de Trindade, em Paraty", cred:"Tomás R M de Paula", lic:"CC BY-SA 4.0"},
+        {t:"p", v:"Paraty é, antes de tudo, um lugar de água. Guias locais e de viagem costumam apontar cerca de <strong>60 praias principais</strong>, e mais de <strong>120 opções</strong> somando praias e ilhas, além de cerca de <strong>65 ilhas</strong> na baía."},
+        {t:"atencao", v:"<strong>Paraty é maior que Salvador</strong>O município tem mais de 900 km², então estar perto de todas as praias é impossível. Escolha uma por dia, conte com o deslocamento e aproveite o caminho, que já é bonito por si só."},
+        {t:"h3", v:"Perto do centro"},
+        {t:"cena", v:"../paraty/jabaquara.jpg", leg:"Jabaquara", alt:"Praia do Jabaquara, em Paraty", cred:"ebalter", lic:"CC BY-SA 3.0"},
+        {t:"lugares", v:[
+          {n:"Jabaquara", d:"A poucos minutos do centro histórico. Água calma e rasa por uma longa faixa, o que agrada muito quem está com criança."}
+        ]},
+        {t:"cena", v:"../paraty/pontal.jpg", leg:"Pontal", alt:"Praia do Pontal, em Paraty", cred:"Jeremè", lic:"CC0"},
+        {t:"lugares", v:[
+          {n:"Pontal", d:"Do outro lado do rio, também coladinha no centro. Quiosques na areia e bom movimento no fim de tarde."}
+        ]},
+        {t:"h3", v:"Vale o deslocamento"},
+        {t:"cena", v:"../paraty/baia.jpg", leg:"A baía de Paraty", alt:"Escunas na baía de Paraty", cred:"Leandro Vilar", lic:"CC BY-SA 4.0"},
+        {t:"lugares", v:[
+          {n:"Trindade", d:"A mais distante das quatro, e para muita gente a mais bonita de todas. Vila de pescadores, mar aberto e as piscinas naturais entre as pedras. Reserve o dia inteiro."}
+        ]},
+        {t:"cena", v:"../paraty/saogoncalo.jpg", leg:"São Gonçalo", alt:"Praia de São Gonçalo, em Paraty", cred:"LUCIANO FORONI", lic:"CC BY-SA 3.0"},
+        {t:"lugares", v:[
+          {n:"São Gonçalo", d:"Praia tranquila de enseada, com barcos de pescadores. É de lá que saem as embarcações para a Ilha do Pelado, uma travessia curta."}
+        ]},
+        {t:"cena", v:"../paraty/pelado.jpg", leg:"Ilha do Pelado", alt:"Ilha do Pelado, na baía de Paraty", cred:"Fontela01", lic:"CC BY-SA 3.0"},
+        {t:"lugares", v:[
+          {n:"Ilha dos Cocos", d:"O acesso é só de barco, e ela entra nos roteiros de passeio pela baía. Contrate no cais."}
+        ]},
+        {t:"nota", v:"Dica de quem mora aqui: combine uma praia com um alambique ou com o centro histórico no mesmo dia, em vez de tentar emendar duas praias distantes."}
       ]
     },
     {
@@ -803,6 +844,7 @@ const GUIA = {
         {t:"h2", v:"Compras e mercado"},
         {t:"lugares", v:[
           {n:"Mercado Cordeiro", d:"A poucos metros da casa! Perfeito para as compras rápidas do dia a dia e para aquele item que faltou.", url:"https://maps.app.goo.gl/bPTBfG3DM1VNgJg68"},
+          {n:"Café da Ponte Padaria", d:"Para o café da manhã e para o pão fresco do dia, quando bater vontade de começar a manhã fora de casa.", url:"https://share.google/lgUGR28wCpjDWrsdn"},
           {n:"Super Carlão Supermercados Avenida", d:"Supermercado bem avaliado, para o abastecimento grande da cozinha."},
           {n:"Droga Raia", d:"No centro de Paraty. Rede grande, fácil de achar."},
           {n:"Farmácias perto da casa", d:"Busca ao vivo no mapa, para ver qual está aberta na hora.", url:"https://www.google.com/maps/search/farmacia/@-23.22439,-44.7628748,14z"}
@@ -847,6 +889,23 @@ const GUIA = {
         {t:"p", v:"Foi um prazer receber você. Volte sempre!"},
         {t:"nota", v:"Temos também a Villa da Serra I, a Villa da Serra 3 e a Villa da Serra 4, aqui em Paraty, e a Cobertura Golden Sea, no Guarujá."}
       ]
+    },
+    {
+      id:"contatos", titulo:"Contatos", icone:"i-fone",
+      blocos:[
+        {t:"h2", v:"Fale com a gente"},
+        {t:"h3", v:"Villa da Serra"},
+        {t:"p", v:"Qualquer dúvida, pedido ou imprevisto, chame no WhatsApp <a class='zap' href='https://wa.me/5524992014102' target='_blank' rel='noopener'><svg aria-hidden='true'><use href='#i-zap'/></svg>+55 24 99201 4102</a><br>Respondemos normalmente em até uma hora."},
+        {t:"h3", v:"Emergência"},
+        {t:"tels"},
+        {t:"h3", v:"Manutenção na casa"},
+        {t:"p", v:"Lâmpada queimada, chuveiro, troca de gás, qualquer reparo: fale direto com o <strong>Fabio</strong>, nosso funcionário em Paraty. Ele resolve rápido e com o maior cuidado.<br>WhatsApp <a class='zap' href='https://wa.me/5524981256380' target='_blank' rel='noopener'><svg aria-hidden='true'><use href='#i-zap'/></svg>+55 24 98125 6380</a>, de <strong>9h às 20h</strong>."},
+        {t:"h3", v:"Saúde"},
+        {t:"lugares", v:[
+          {n:"Pronto Socorro Hospital Municipal Hugo Miranda", d:"Pronto socorro de Paraty, a cerca de 5 km da casa. Em emergência com risco de vida, ligue 192 antes de sair."}
+        ]},
+        {t:"nota", v:"Água, luz e internet são fornecidas por terceiros. Buscamos sempre a melhor solução, mas quedas na cidade fogem do nosso controle."}
+      ]
     }
   ]
 };
@@ -879,6 +938,7 @@ function blocoHTML(b){
         return `<div class="par"><span class="k">${esc(it.k)}</span><span class="v">${marcar(it.v)}${botao}</span></div>`;
       }).join("")}</div>`;
     case "foto": return `<div class="cabecalho-foto"><img src="${esc(b.v)}.jpg" loading="lazy" alt="${attr(b.alt || "")}"></div>`;
+    case "cena": return `<figure class="cena"><div class="moldura"><img src="${esc(b.v)}" loading="lazy" alt="${attr(b.alt || "")}"></div><figcaption><b>${esc(b.leg || "")}</b> <span>· foto de ${esc(b.cred || "")}, ${esc(b.lic || "")}, via Wikimedia Commons</span></figcaption></figure>`;
     case "galeria": return `<div class="galeria">${FOTOS.map((f, i) => `<button type="button" data-foto="${i}" aria-label="Ampliar: ${attr(f.l)}"><img src="${f.a}t.jpg" loading="lazy" alt="${attr(f.l)}"></button>`).join("")}</div>`;
     case "lugares": return b.v.map(l => {
         const link = pendente(l.n) ? ""
