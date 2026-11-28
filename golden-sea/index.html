@@ -390,6 +390,12 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 /* ---------- foto de abertura de seção ---------- */
 .cabecalho-foto{margin:0 0 18px;border-radius:var(--raio);overflow:hidden;aspect-ratio:16/10;background:var(--mar-claro)}
 .cabecalho-foto img{width:100%;height:100%;object-fit:cover;display:block}
+figure.cena{margin:0 0 18px}
+figure.cena .moldura{border-radius:var(--raio);overflow:hidden;aspect-ratio:16/10;background:var(--mar-claro)}
+figure.cena img{width:100%;height:100%;object-fit:cover;display:block}
+figure.cena figcaption{font-size:11px;color:var(--suave);margin-top:6px;line-height:1.45}
+figure.cena figcaption b{font-weight:600;color:var(--tinta)}
+figure.cena figcaption span{opacity:.8}
 
 /* ---------- galeria ---------- */
 .galeria{display:grid;grid-template-columns:1fr 1fr;gap:8px}
@@ -723,6 +729,7 @@ const GUIA = {
         {t:"h3", v:"Piscina"},
         {t:"p", v:"A piscina é privativa da cobertura e tem piscineiro próprio, que cuida dela durante toda a sua estadia. Pode entrar sem preocupação!"},
         {t:"p", v:"A <strong>luz da piscina</strong> acende pelo controle que fica fixado na porta de vidro."},
+        {t:"atencao", v:"<strong>Criança na água sempre acompanhada</strong>A piscina é privativa e <strong>não tem salva vidas</strong>. Com crianças, um adulto por perto o tempo todo."},
         {t:"atencao", v:"<strong>Não mexa nos registros</strong>A piscina tem registros e bombas para funcionar. Mexer neles sem o procedimento correto queima a bomba, e o conserto é cobrado. Na dúvida, é só nos chamar."},
         {t:"h3", v:"Som da área externa"},
         {t:"p", v:"Dá para colocar a sua playlist para tocar em quatro passos:"},
@@ -764,29 +771,6 @@ const GUIA = {
       ]
     },
     {
-      id:"criancas", titulo:"Com crianças", icone:"i-crianca",
-      blocos:[
-        {t:"h2", v:"Com crianças"},
-        {t:"foto", v:"23", alt:"Piscina da cobertura com vista para a praia"},
-        {t:"p", v:"A cobertura é uma delícia para a criançada. Alguns cuidados ajudam a viagem a ser só alegria."},
-        {t:"h3", v:"Na cobertura"},
-        {t:"ul", v:[
-          "A piscina é privativa e <strong>não tem salva vidas</strong>. Criança na água sempre com um adulto por perto.",
-          "As portas de vidro são sensíveis. Vale combinar antes de não correr perto delas.",
-          "Crianças contam no limite de 10 pessoas e também precisam constar na lista da portaria.",
-          "A mesa grande da área externa comporta a família toda para uma refeição juntos."
-        ]},
-        {t:"h3", v:"Na praia"},
-        {t:"ul", v:[
-          "A Enseada fica em frente ao prédio, com o serviço de praia do condomínio.",
-          "Para mar mais calmo, vale o deslocamento até a Praia das Astúrias.",
-          "Com crianças pequenas, evite o Tombo: o mar é aberto e as ondas são fortes."
-        ]},
-        {t:"h3", v:"Passeios"},
-        {t:"p", v:"O Acqua Mundo, na própria Enseada, é a saída certa em dia de chuva ou de sol forte demais. Sucesso garantido com os pequenos."}
-      ]
-    },
-    {
       id:"fotos", titulo:"Fotos", icone:"i-camera",
       blocos:[
         {t:"h2", v:"Fotos"},
@@ -799,15 +783,26 @@ const GUIA = {
       id:"praias", titulo:"Praias", icone:"i-ondas",
       blocos:[
         {t:"h2", v:"Praias do Guarujá"},
-        {t:"p", v:"Você está na Enseada, com o serviço de praia do prédio logo em frente. Mas vale conhecer as vizinhas, todas a poucos minutos de carro."},
+        {t:"cena", v:"../guaruja/enseada.jpg", leg:"Praia da Enseada", alt:"Praia da Enseada, no Guarujá", cred:"Jorge Morales Piderit", lic:"CC0"},
+        {t:"p", v:"Você está na Enseada, com o serviço de praia do prédio logo em frente. Estas são as nossas indicações, da porta às mais reservadas."},
+        {t:"h3", v:"Na porta e ao lado"},
         {t:"lugares", v:[
-          {n:"Praia da Enseada", d:"A praia da porta. A maior da cidade, com faixa de areia longa, quiosques e muita estrutura. O serviço de praia do prédio fica aqui."},
-          {n:"Praia de Pitangueiras", d:"Central e animada, cercada de comércio, hotéis e restaurantes. A mais prática para quem está sem carro."},
-          {n:"Praia das Astúrias", d:"Mais abrigada e tranquila que as vizinhas, com mar calmo. Nossa preferida para ir com crianças."},
-          {n:"Praia do Tombo", d:"Mar aberto e ondas fortes, point de surf. Atenção à sinalização de banho."},
-          {n:"Praia da Guaiúba", d:"Pequena e cercada por morros, com clima de enseada reservada."},
-          {n:"Praia de Pernambuco", d:"Águas calmas e ambiente mais familiar, do lado oposto da cidade. Vale o passeio de carro."}
+          {n:"Praia da Enseada", d:"A principal, onde fica a cobertura. A maior da cidade, com cerca de 5,6 km, ampla faixa de areia, quiosques, hotéis, atividades náuticas e atrações por perto, como o Acqua Mundo. O serviço de praia do prédio fica aqui."}
         ]},
+        {t:"cena", v:"../guaruja/pitangueiras.jpg", leg:"Praia de Pitangueiras", alt:"Praia de Pitangueiras, no Guarujá", cred:"eduinvest", lic:"CC BY-SA 3.0"},
+        {t:"lugares", v:[
+          {n:"Praia de Pitangueiras", d:"Logo ao lado, dá para ir a pé. Central e movimentada, com fácil acesso a comércio, restaurantes e aos passeios que saem do píer."}
+        ]},
+        {t:"h3", v:"Vale o deslocamento"},
+        {t:"cena", v:"../guaruja/tombo.jpg", leg:"Praia do Tombo", alt:"Praia do Tombo, no Guarujá", cred:"MTur Destinos", lic:"Public domain"},
+        {t:"lugares", v:[
+          {n:"Praia do Tombo", d:"Estrutura, agito e surf. O mar é aberto e as ondas são fortes, então fique atento à sinalização de banho."}
+        ]},
+        {t:"cena", v:"../guaruja/iporanga.jpg", leg:"Praia de Iporanga", alt:"Praia de Iporanga, no Guarujá", cred:"Lorraineoli", lic:"CC BY-SA 4.0"},
+        {t:"lugares", v:[
+          {n:"Praia de Iporanga", d:"Cercada por vegetação, com uma cachoeira que deságua perto do mar. O acesso é controlado e não há estrutura comercial no local, então leve o que for consumir."}
+        ]},
+        {t:"nota", v:"Com crianças pequenas, a Praia das Astúrias tem mar bem mais calmo e vale o deslocamento. No Tombo, atenção redobrada: o mar é aberto."},
         {t:"nota", v:"Confira a condição do mar e a bandeira dos salva vidas antes de entrar na água."}
       ]
     },
@@ -961,6 +956,7 @@ function blocoHTML(b){
         return `<div class="par"><span class="k">${esc(it.k)}</span><span class="v">${marcar(it.v)}${botao}</span></div>`;
       }).join("")}</div>`;
     case "foto": return `<div class="cabecalho-foto"><img src="${esc(b.v)}.jpg" loading="lazy" alt="${attr(b.alt || "")}"></div>`;
+    case "cena": return `<figure class="cena"><div class="moldura"><img src="${esc(b.v)}" loading="lazy" alt="${attr(b.alt || "")}"></div><figcaption><b>${esc(b.leg || "")}</b> <span>· foto de ${esc(b.cred || "")}, ${esc(b.lic || "")}, via Wikimedia Commons</span></figcaption></figure>`;
     case "galeria": return `<div class="galeria">${FOTOS.map((f, i) => `<button type="button" data-foto="${i}" aria-label="Ampliar: ${attr(f.l)}"><img src="${f.a}t.jpg" loading="lazy" alt="${attr(f.l)}"></button>`).join("")}</div>`;
     case "lugares": return b.v.map(l => {
         const link = pendente(l.n) ? ""
