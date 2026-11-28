@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Guia do Hóspede · Portal do Corumbê</title>
+<title>Guia do Hóspede · Portal do Corumbê 2</title>
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
-<meta name="description" content="Guia do hóspede do Portal do Corumbê, casa moderna com piscina de vidro no Caboré, em Paraty.">
-<meta property="og:title" content="Guia do Hóspede · Portal do Corumbê">
-<meta property="og:description" content="Tudo sobre a sua estadia: entrada, wifi, piscina de vidro, churrasqueira e dicas de Paraty.">
+<meta name="description" content="Guia do hóspede do Portal do Corumbê 2, casa com piscina privativa e área gourmet no Caboré, em Paraty.">
+<meta property="og:title" content="Guia do Hóspede · Portal do Corumbê 2">
+<meta property="og:description" content="Tudo sobre a sua estadia: entrada, wifi, piscina, churrasqueira e dicas de Paraty.">
 <meta property="og:image" content="capa.jpg">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -446,13 +446,13 @@ figure.cena figcaption span{opacity:.8}
   <!-- CAPA -->
   <section class="pag ativa" id="capa">
     <div class="hero">
-      <img src="capa.jpg" alt="Piscina de vidro da casa">
+      <img src="capa.jpg" alt="Piscina privativa no quintal">
     </div>
     <div class="capa-rodape">
       <div class="capa-script">Guia de</div>
       <h1 class="capa-titulo">Boas vindas</h1>
       <div class="capa-fios"><span></span><i></i><span></span></div>
-      <div class="capa-nome">Portal do Corumbê</div>
+      <div class="capa-nome">Portal do Corumbê 2</div>
       <div class="capa-local">Paraty · Rio de Janeiro</div>
       <a class="botao" href="#sumario">Abrir o guia</a>
       <div class="capa-end">Caboré · Paraty · RJ</div>
@@ -485,7 +485,7 @@ figure.cena figcaption span{opacity:.8}
         <a href="tel:193"><b>193</b> bombeiros</a>
       </div>
     </div>
-    <p class="rodape">Portal do Corumbê · Paraty</p>
+    <p class="rodape">Portal do Corumbê 2 · Paraty</p>
   </section>
 
   <div id="paginas"></div>
@@ -510,30 +510,29 @@ figure.cena figcaption span{opacity:.8}
    pendência. Troque pelo valor real e a etiqueta some sozinha.
    ===================================================================== */
 const FOTOS = [
-  {a:"01", l:"A piscina de vidro"},
-  {a:"02", l:"Piscina e área externa"},
-  {a:"03", l:"Da sala para a área externa"},
-  {a:"04", l:"Pátio e piscina"},
-  {a:"05", l:"Os fundos da casa e o pátio"},
-  {a:"06", l:"Área gourmet coberta"},
-  {a:"07", l:"Churrasqueira e pia"},
-  {a:"08", l:"Mesa no pátio"},
-  {a:"09", l:"Pátio com o muro de cobogó"},
-  {a:"10", l:"Cozinha com ilha"},
-  {a:"11", l:"Cozinha, outro ângulo"},
-  {a:"12", l:"Cozinha e jantar"},
-  {a:"13", l:"Sala de estar"},
-  {a:"14", l:"Sala de estar, outro ângulo"},
-  {a:"15", l:"Escada e cozinha"},
-  {a:"16", l:"Quarto de casal"},
-  {a:"17", l:"Quarto de casal e mesa de trabalho"},
-  {a:"18", l:"Quarto de casal e sacada"},
-  {a:"19", l:"Sacada com vista para a piscina"},
-  {a:"20", l:"Quarto com bicamas"},
-  {a:"21", l:"Quarto com bicamas e sacada"},
-  {a:"22", l:"Banheiro"},
-  {a:"23", l:"Lavabo"},
-  {a:"24", l:"Fachada e garagem"}
+  {a:"01", l:"A piscina privativa no quintal"},
+  {a:"02", l:"Piscina, outro ângulo"},
+  {a:"03", l:"Área da churrasqueira e piscina"},
+  {a:"04", l:"Área da churrasqueira"},
+  {a:"05", l:"Churrasqueira"},
+  {a:"06", l:"Quintal cercado"},
+  {a:"07", l:"Pia e churrasqueira"},
+  {a:"08", l:"Varanda com rede"},
+  {a:"09", l:"Varanda e mesa de madeira"},
+  {a:"10", l:"Mesa na varanda"},
+  {a:"11", l:"Sala e cozinha"},
+  {a:"12", l:"Sala de estar"},
+  {a:"13", l:"TV e escada"},
+  {a:"14", l:"Cozinha"},
+  {a:"15", l:"Cozinha e sala"},
+  {a:"16", l:"Cozinha, outro ângulo"},
+  {a:"17", l:"Quarto de casal"},
+  {a:"18", l:"Banheiro"},
+  {a:"19", l:"Banheiro, outro ângulo"},
+  {a:"20", l:"Lavabo"},
+  {a:"21", l:"Fachada"},
+  {a:"22", l:"Entrada do condomínio"},
+  {a:"23", l:"O condomínio"}
 ];
 
 const GUIA = {
@@ -543,15 +542,15 @@ const GUIA = {
       id:"boasvindas", titulo:"Boas vindas", icone:"i-home",
       blocos:[
         {t:"h2", v:"Seja muito bem vindo!"},
-        {t:"foto", v:"01", alt:"Piscina de vidro da casa"},
-        {t:"p", v:"Que alegria receber você aqui! Este é o <strong>Portal do Corumbê</strong>, no Caboré, em Paraty."},
-        {t:"p", v:"Uma casa de design moderno e construção de alto padrão, pensada para quem busca tranquilidade e quer voltar das férias com um álbum cheio de fotos bonitas. Cada cantinho foi feito para isso, e a piscina de vidro é a estrela da casa."},
-        {t:"p", v:"A casa é um sobrado, toda privativa, para <strong>até 8 hóspedes</strong>. São 2 quartos com ar condicionado no andar de cima, sala e cozinha integradas no térreo, e nos fundos o pátio com a piscina, a área gourmet e a churrasqueira, tudo só de vocês."},
+        {t:"foto", v:"01", alt:"Piscina privativa no quintal"},
+        {t:"p", v:"Que alegria receber você aqui! Este é o <strong>Portal do Corumbê 2</strong>, no Caboré, em Paraty."},
+        {t:"p", v:"Uma casa nova e aconchegante, num condomínio tranquilo e seguro, em contato com a natureza e com vista para as montanhas. Lugar ideal para descansar, e muito perto de praias e cachoeiras."},
+        {t:"p", v:"A casa é um sobrado, toda privativa, para <strong>até 8 hóspedes</strong>. São 2 quartos com ar condicionado, sala e cozinha integradas, e uma área de lazer fechada e espaçosa, com <strong>piscina privativa</strong>, varanda com rede e churrasqueira com banheiro e chuveiro."},
         {t:"p", v:"Preparamos este guia para você não precisar perguntar nada e simplesmente aproveitar. Aqui você encontra:"},
         {t:"ul", v:[
-          "Como entrar, com a fechadura inteligente",
+          "Como entrar, com o cofre de chaves",
           "A senha do wifi e como usar a casa",
-          "A piscina de vidro, a área gourmet e a churrasqueira",
+          "A piscina, a varanda e a churrasqueira",
           "Praias, cachoeiras, restaurantes e o centro histórico"
         ]},
         {t:"p", v:"Fique bem à vontade, como se estivesse na sua própria casa, e cuide dela com o mesmo carinho. Qualquer coisa, é só chamar no WhatsApp!"}
@@ -562,20 +561,21 @@ const GUIA = {
       blocos:[
         {t:"h2", v:"Entrada e saída"},
         {t:"h3", v:"Chegada"},
-        {t:"p", v:"Você pode chegar a partir das <strong>15h</strong>. A entrada é autônoma, pela <strong>fechadura inteligente</strong>, então não precisa esperar ninguém."},
-        {t:"destaque", v:"<strong>A senha da fechadura vai por mensagem</strong>[[Como e quando a senha é enviada ao hóspede]]"},
+        {t:"p", v:"Você pode chegar a partir das <strong>[[horário de entrada]]</strong>. A entrada é autônoma: as chaves ficam num <strong>cofre de chaves</strong>, então não precisa esperar ninguém."},
+        {t:"destaque", v:"<strong>A senha do cofre vai por mensagem</strong>[[Onde fica o cofre e quando a senha é enviada ao hóspede]]"},
         {t:"ul", v:[
           "Há <strong>estacionamento gratuito</strong> dentro da propriedade, e também na rua.",
-          "A casa é um <strong>sobrado</strong>: os quartos ficam no andar de cima, então vale planejar a subida da bagagem."
+          "A casa é um <strong>sobrado</strong>, então vale planejar a subida da bagagem."
         ]},
         {t:"h3", v:"Saída"},
-        {t:"p", v:"A saída é até as <strong>11h</strong>. Antes de ir embora, uma passadinha rápida:"},
+        {t:"p", v:"A saída é até as <strong>[[horário de saída]]</strong>. Antes de ir embora, uma passadinha rápida:"},
         {t:"ul", v:[
           "Junte o lixo em sacos plásticos e deixe [[onde deixar o lixo na saída]].",
           "Deixe a louça lavada.",
           "Apague bem as brasas da churrasqueira, se tiver usado.",
-          "Feche as janelas e as portas das sacadas, desligue o ar condicionado e as luzes.",
-          "Dê uma olhada nos dois quartos, nos banheiros e na área gourmet, para não esquecer nada."
+          "Feche as janelas, desligue o ar condicionado e as luzes.",
+          "Devolva as chaves ao cofre e embaralhe a senha.",
+          "Dê uma olhada nos quartos, nos banheiros e na área da churrasqueira, para não esquecer nada."
         ]},
         {t:"nota", v:"Esqueceu alguma coisa? Avise a gente, que damos um jeito de enviar."}
       ]
@@ -586,25 +586,28 @@ const GUIA = {
         {t:"h2", v:"Regras da casa"},
         {t:"p", v:"Lembre que você está na casa de alguém. Estas regras valem para todos os hóspedes e existem para que a sua estadia corra bem e a casa continue impecável para quem vem depois."},
         {t:"ul", v:[
-          "<strong>Até 8 hóspedes</strong> pernoitando.",
+          "<strong>Até 8 hóspedes</strong> pernoitando. Bebês não entram na conta.",
+          "<strong>Festas e eventos não são permitidos.</strong>",
+          "<strong>Silêncio das 22h às 8h.</strong> Nada de barulho excessivo nesse horário.",
+          "<strong>Fumar só na área externa.</strong> Dentro da casa é proibido, incluindo vape e cigarro eletrônico.",
+          "<strong>Não sente molhado no sofá nem nas camas.</strong> Vindo da piscina, seque bem antes.",
           "<strong>Pets são bem vindos:</strong> no máximo 1. Animais de assistência são sempre permitidos.",
-          "<strong>Proibido fumar</strong>, incluindo vape e cigarro eletrônico.",
-          "<strong>Silêncio das 22h às 8h.</strong>",
+          "Fotografia e filmagem comercial são permitidas.",
           "Água, luz e internet são fornecidas por terceiros e podem ter quedas fora do nosso controle."
         ]},
         {t:"h3", v:"O que deixamos para você"},
-        {t:"destaque", v:"<strong>Cozinha com o básico</strong>Deixamos café, óleo, sal e pimenta, além de produtos de limpeza, para ninguém precisar sair correndo no mercado assim que chega."},
+        {t:"destaque", v:"<strong>Cozinha com o básico</strong>Deixamos óleo, sal e pimenta, além de sabonete e produtos de limpeza, para ninguém precisar sair correndo no mercado assim que chega."},
         {t:"h3", v:"Enxoval"},
         {t:"ul", v:[
-          "Deixamos <strong>roupa de cama</strong> nos leitos.",
+          "Deixamos <strong>roupa de cama de algodão</strong> nos leitos.",
           "Toalhas: [[fornecemos toalhas de banho? E de piscina?]]",
-          "Há secador de cabelo, cabides, ferro de passar e varal à disposição.",
+          "Há secador de cabelo, ferro de passar e varal à disposição.",
           "Troca de enxoval ou limpeza extra durante a estadia: [[é possível? Qual o valor?]]"
         ]},
         {t:"h3", v:"Segurança"},
         {t:"ul", v:[
-          "Há uma <strong>câmera na parte externa</strong>, filmando o portão de entrada. Nenhuma dentro da casa.",
-          "A casa é um sobrado com escada, e os quartos têm sacada. Atenção redobrada com crianças.",
+          "O quintal é <strong>totalmente cercado</strong>.",
+          "A casa é um sobrado com escada. Atenção redobrada com crianças.",
           "A piscina <strong>não tem salva vidas</strong>. Criança na água sempre com um adulto por perto."
         ]}
       ]
@@ -614,22 +617,26 @@ const GUIA = {
       blocos:[
         {t:"h2", v:"Perguntas frequentes"},
         {t:"h3", v:"Quantas pessoas cabem?"},
-        {t:"p", v:"Oito. O quarto de casal tem cama queen, o segundo quarto tem duas bicamas, com 4 camas de solteiro, e a sala tem sofá cama. [[Confirmar onde fica a segunda cama queen citada no anúncio]]"},
+        {t:"p", v:"Oito. O quarto de casal tem cama queen e o segundo quarto tem 4 camas de solteiro. [[Onde dormem os outros 3 hóspedes: sofá cama, colchões?]]"},
         {t:"h3", v:"A piscina é só da casa?"},
-        {t:"p", v:"É sim! A piscina de vidro é <strong>privativa</strong>, junto com o pátio, a área gourmet e a churrasqueira. Ela não é aquecida."},
+        {t:"p", v:"É sim! A piscina é <strong>privativa</strong>, no quintal cercado, junto com a varanda e a churrasqueira."},
         {t:"h3", v:"Posso levar meu pet?"},
-        {t:"p", v:"Pode, com prazer! Aceitamos 1 pet por reserva."},
+        {t:"p", v:"Pode, com prazer! Aceitamos 1 pet por reserva, e o quintal é todo cercado."},
+        {t:"h3", v:"Pode fumar?"},
+        {t:"p", v:"Só na área externa. Dentro da casa não, nem vape."},
         {t:"h3", v:"Dá para trabalhar daqui?"},
-        {t:"p", v:"Dá. Há um espaço de trabalho no quarto, com porta, além do wifi e de conexão por cabo (Ethernet)."},
+        {t:"p", v:"Dá. Há um espaço de trabalho num quarto com porta, além do wifi."},
         {t:"h3", v:"Tem berço?"},
-        {t:"p", v:"Tem, mediante solicitação. Peça com antecedência para já encontrar tudo pronto. A casa também tem protetores de tomada."},
+        {t:"p", v:"Tem, mediante solicitação. Peça com antecedência para já encontrar tudo pronto."},
+        {t:"h3", v:"Dá para ficar um mês?"},
+        {t:"p", v:"Dá! A casa aceita estadias de 28 dias ou mais. É só chamar para combinar."},
         {t:"h3", v:"Tem máquina de lavar?"},
         {t:"p", v:"Há lavanderia nas proximidades, além de ferro de passar e varal na casa."},
         {t:"h3", v:"O que preciso levar?"},
         {t:"ul", v:[
           "Produtos de higiene pessoal.",
           "[[Toalhas, se não forem fornecidas]]",
-          "<strong>Carvão</strong> para a churrasqueira."
+          "[[Carvão, se não estiver incluído]]"
         ]},
         {t:"h3", v:"Dá para chegar sem carro?"},
         {t:"p", v:"Dá. Há um <strong>ponto de ônibus na porta do condomínio</strong>. Mas com carro fica tudo mais perto, principalmente as praias e cachoeiras."}
@@ -639,64 +646,64 @@ const GUIA = {
       id:"casa", titulo:"A casa", icone:"i-casa",
       blocos:[
         {t:"h2", v:"Como usar a casa"},
-        {t:"foto", v:"10", alt:"Cozinha com ilha"},
+        {t:"foto", v:"14", alt:"Cozinha"},
         {t:"h3", v:"Wifi"},
         {t:"dados", itens:[
           {k:"Rede", v:"[[nome da rede]]", copiar:false},
           {k:"Senha", v:"[[senha do wifi]]", copiar:true}
         ]},
-        {t:"p", v:"Há também <strong>conexão por cabo (Ethernet)</strong>, para quem precisa de mais estabilidade. Se o wifi cair, é só nos chamar."},
+        {t:"p", v:"Se o wifi cair, é só nos chamar."},
         {t:"h3", v:"Cozinha"},
         {t:"ul", v:[
-          "<strong>Cozinha completa</strong>, com ilha, fogão a gás, forno elétrico, micro ondas, geladeira, freezer e liquidificador.",
-          "Pratos, tigelas, copos, taças de vinho, talheres, panelas, vasilhas e assadeira já estão aí, prontos para usar.",
-          "Mesa de jantar dentro de casa e outra na área gourmet.",
+          "<strong>Cozinha completa</strong>, com fogão a gás Brastemp, forno, micro ondas, geladeira, freezer, torradeira e liquidificador.",
+          "Pratos, tigelas, copos, talheres, panelas e vasilhas já estão aí, prontos para usar.",
+          "Balcão com banquetas, mesa de jantar dentro de casa e outra na varanda.",
           "<strong>Fogão a gás:</strong> feche bem os botões ao terminar.",
           "<strong>Micro ondas:</strong> nada de metal nem papel alumínio."
         ]},
         {t:"h3", v:"Climatização"},
         {t:"ul", v:[
-          "Há <strong>ar condicionado nos dois quartos</strong>.",
-          "A sala tem <strong>ventilador de teto</strong>.",
+          "Há <strong>ar condicionado split nos quartos</strong>.",
           "Feche portas e janelas enquanto o ar estiver ligado e desligue ao sair, para o aparelho durar."
         ]},
         {t:"h3", v:"Quartos"},
         {t:"ul", v:[
-          "Os dois quartos ficam no andar de cima e têm <strong>sacada</strong>. A do quarto de casal dá vista para a piscina.",
-          "Há local para guardar as roupas e cabides em cada quarto.",
-          "O quarto de casal tem uma <strong>mesa de trabalho</strong>."
+          "<strong>Quarto 1:</strong> cama queen.",
+          "<strong>Quarto 2:</strong> 4 camas de solteiro.",
+          "Há local para guardar as roupas, e um espaço de trabalho num quarto com porta."
         ]},
-        {t:"h3", v:"TV e diversão"},
+        {t:"h3", v:"TV e leitura"},
         {t:"ul", v:[
-          "TV de <strong>43 polegadas</strong> na sala.",
-          "Há <strong>jogos de tabuleiro</strong> na casa, ótimos para a noite ou para um dia de chuva."
+          "TV de <strong>48 polegadas com Netflix</strong> na sala.",
+          "Há <strong>livros</strong> na casa, para ler na rede da varanda."
         ]},
         {t:"h3", v:"Banheiros"},
         {t:"ul", v:[
-          "São <strong>2 banheiros completos e 1 lavabo</strong>, com água quente e secador de cabelo.",
-          "Há um <strong>chuveiro externo</strong> na área da piscina."
+          "São <strong>2 banheiros completos e 1 lavabo</strong>, com secador de cabelo e sabonete.",
+          "Junto da churrasqueira há <strong>banheiro com chuveiro</strong>, e o quintal tem <strong>ducha externa</strong>, para ninguém entrar molhado em casa."
         ]},
-        {t:"atencao", v:"<strong>A casa é um sobrado</strong>Atenção na escada com crianças pequenas e com pé molhado vindo da piscina."}
+        {t:"atencao", v:"<strong>Não sente molhado no sofá nem nas camas</strong>Seque bem antes de entrar, e cuidado com pé molhado na escada."}
       ]
     },
     {
       id:"externa", titulo:"Piscina e churrasco", icone:"i-piscina",
       blocos:[
         {t:"h2", v:"Área externa"},
-        {t:"foto", v:"02", alt:"Piscina e área externa"},
-        {t:"h3", v:"Piscina de vidro"},
-        {t:"p", v:"A piscina é <strong>privativa</strong>, com a parede de vidro que é a marca da casa e rende as fotos mais bonitas da viagem. Em volta, o pátio com mesas e cadeiras e um jardim com vista para as montanhas."},
+        {t:"foto", v:"03", alt:"Área da churrasqueira e piscina"},
+        {t:"h3", v:"Piscina"},
+        {t:"p", v:"A piscina é <strong>privativa</strong>, só da casa, no quintal totalmente cercado e com vista para as montanhas."},
         {t:"ul", v:[
           "Não há salva vidas. Criança na água sempre com um adulto por perto.",
-          "Use o <strong>chuveiro externo</strong> antes do mergulho: tirar o excesso de protetor solar e areia ajuda a manter a água limpa.",
-          "Respeite o horário de silêncio, das 22h às 8h.",
-          "A piscina <strong>não é aquecida</strong>."
+          "Use a <strong>ducha externa</strong> antes do mergulho: tirar o excesso de protetor solar e areia ajuda a manter a água limpa.",
+          "Respeite o horário de silêncio, das 22h às 8h."
         ]},
-        {t:"h3", v:"Área gourmet e churrasqueira"},
-        {t:"foto", v:"06", alt:"Área gourmet coberta"},
-        {t:"p", v:"Nos fundos fica a <strong>área gourmet coberta</strong>, com churrasqueira, pia e mesa de jantar ao ar livre. É só de vocês."},
+        {t:"h3", v:"Varanda"},
+        {t:"foto", v:"08", alt:"Varanda com rede"},
+        {t:"p", v:"A varanda é coberta, com <strong>rede</strong> e uma mesa grande de madeira, perfeita para as refeições ao ar livre."},
+        {t:"h3", v:"Churrasqueira"},
+        {t:"p", v:"A churrasqueira de alvenaria fica numa área coberta, com pia, bancada e poltronas, e tem <strong>banheiro com chuveiro</strong> ao lado. É só de vocês."},
         {t:"ul", v:[
-          "Há utensílios para churrasco. <strong>O carvão não está incluído</strong>, traga o seu.",
+          "Há utensílios para churrasco. Carvão: [[incluso ou o hóspede traz?]]",
           "Apague bem as brasas ao terminar e deixe a grelha limpa.",
           "Nunca deixe a churrasqueira acesa sem ninguém por perto."
         ]}
@@ -796,7 +803,7 @@ const GUIA = {
           "Um <strong>alambique</strong> com visita guiada é programa coberto e termina em degustação.",
           "O <strong>Museu de Arte Sacra</strong> é rápido e fica no centro."
         ]},
-        {t:"p", v:"Em casa, a área gourmet é coberta, então o churrasco não precisa ser cancelado. E os jogos de tabuleiro estão esperando por vocês."},
+        {t:"p", v:"Em casa, a varanda e a churrasqueira são cobertas, então o churrasco não precisa ser cancelado. E tem livro e rede esperando por vocês."},
         {t:"atencao", v:"<strong>Cachoeira em dia de chuva, não</strong>O volume de água sobe muito rápido e as pedras ficam escorregadias. Deixe para outro dia, por favor."}
       ]
     },
@@ -837,10 +844,10 @@ const GUIA = {
       id:"ateLogo", titulo:"Até logo", icone:"i-estrela",
       blocos:[
         {t:"h2", v:"Obrigado pela sua estadia!"},
-        {t:"p", v:"Esperamos de coração que a casa tenha sido tudo o que você imaginou, e um pouco mais. E que as fotos tenham ficado lindas!"},
+        {t:"p", v:"Esperamos de coração que a casa tenha sido tudo o que você imaginou, e um pouco mais. E que volte para casa descansado!"},
         {t:"p", v:"Se gostou, algumas palavras na avaliação ajudam muito e orientam quem vem depois. E se alguma coisa não saiu como deveria, preferimos saber direto por mensagem, para corrigir e fazer melhor na próxima."},
         {t:"p", v:"Foi um prazer receber você. Volte sempre!"},
-        {t:"nota", v:"Temos também a <strong>Linda Casa com Piscina e Área Gourmet</strong>, aqui no mesmo condomínio. É só chamar para saber a disponibilidade."}
+        {t:"nota", v:"Temos também o <strong>Portal do Corumbê 1</strong>, aqui no mesmo condomínio, com piscina de vidro. É só chamar para saber a disponibilidade."}
       ]
     },
     {
@@ -930,7 +937,7 @@ document.getElementById("paginas").innerHTML = GUIA.secoes.map((s, i) => {
       <a class="${ant?"":"off"}" href="#${ant?ant.id:""}">${ant?esc(ant.titulo):""}</a>
       <a class="${prox?"":"off"}" href="#${prox?prox.id:""}">${prox?esc(prox.titulo):""}</a>
     </nav>
-    <p class="rodape">Portal do Corumbê · Paraty</p>
+    <p class="rodape">Portal do Corumbê 2 · Paraty</p>
   </section>`;
 }).join("");
 
